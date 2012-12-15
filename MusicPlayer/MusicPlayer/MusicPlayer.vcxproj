@@ -74,10 +74,31 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Album.h" />
+    <ClInclude Include="MusicCollection.h" />
+    <ClInclude Include="MusicComponent.h" />
+    <ClInclude Include="MusicFactory.h" />
+    <ClInclude Include="MusicKind.h" />
+    <ClInclude Include="MusicPlayer.h" />
     <ClInclude Include="Object.h" />
+    <ClInclude Include="PlayVisitor.h" />
+    <ClInclude Include="SearchVisitor.h" />
+    <ClInclude Include="Song.h" />
+    <ClInclude Include="TimeVisitor.h" />
+    <ClInclude Include="Visitor.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Album.cpp" />
+    <ClCompile Include="MusicCollection.cpp" />
+    <ClCompile Include="MusicComponent.cpp" />
+    <ClCompile Include="MusicFactory.cpp" />
+    <ClCompile Include="MusicPlayer.cpp" />
     <ClCompile Include="Object.cpp" />
+    <ClCompile Include="PlayVisitor.cpp" />
+    <ClCompile Include="SearchVisitor.cpp" />
+    <ClCompile Include="Song.cpp" />
+    <ClCompile Include="TimeVisitor.cpp" />
+    <ClCompile Include="Visitor.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
