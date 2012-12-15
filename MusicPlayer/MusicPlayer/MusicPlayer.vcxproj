@@ -98,7 +98,6 @@
     <ClCompile Include="SearchVisitor.cpp" />
     <ClCompile Include="Song.cpp" />
     <ClCompile Include="TimeVisitor.cpp" />
-    <ClCompile Include="Visitor.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

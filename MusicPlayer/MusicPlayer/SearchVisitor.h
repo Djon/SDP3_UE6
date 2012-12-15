@@ -1,21 +1,38 @@
 ///////////////////////////////////////////////////////////////////////////
-// Workfile : Object.h
+// Workfile : SearchVisitor.h
 // Author : Reinhard Penn, Bernhard Selymes
 // Date : 6.11.2012
-// Description : Header for Object.cpp
+// Description : Header of SearchVisitor
 ///////////////////////////////////////////////////////////////////////////
 
-#ifndef OBJECT_H
-#define OBJECT_H
+#ifndef SEARCHVISITOR_H
+#define SEARCHVISITOR_H
 
-class Object
+#include <string>
+#include "Object.h"
+#include "Visitor.h"
+#include "Song.h"
+#include "Album.h"
+#include "MusicCollection.h"
+
+typedef list<MusicComponent*> TMusicComponents;
+
+class SearchVisitor :
+	public Visitor,
+	public Object
 {
 public:
-	//virtual Destructor for baseclass
-	virtual ~Object();
-protected:
-	//Default CTor for baseclass
-	Object();
+	SearchVisitor(std::string const& name);
+
+	virtual void Visit(Song* song);
+	virtual void Visit(Album* album);
+	virtual void Visit(MusicCollection* musicCollection);
+
+	TMusicComponents* GetResults();
+
+private:
+	std::string const mName;	//really const?
+	TMusicComponents mResults;
 };
 
 #endif

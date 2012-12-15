@@ -1,21 +1,27 @@
 ///////////////////////////////////////////////////////////////////////////
-// Workfile : Object.h
+// Workfile : PlayVisitor.h
 // Author : Reinhard Penn, Bernhard Selymes
 // Date : 6.11.2012
-// Description : Header for Object.cpp
+// Description : Header of PlayVisitor.cpp
 ///////////////////////////////////////////////////////////////////////////
 
-#ifndef OBJECT_H
-#define OBJECT_H
+#ifndef PLAYVISITOR_H
+#define PLAYVISITOR_H
 
-class Object
+#include "Object.h"
+#include "Visitor.h"
+#include "Song.h"
+#include "Album.h"
+#include "MusicCollection.h"
+
+class PlayVisitor :
+	public Visitor,
+	public Object
 {
 public:
-	//virtual Destructor for baseclass
-	virtual ~Object();
-protected:
-	//Default CTor for baseclass
-	Object();
+	virtual void Visit(Song* song);
+	virtual void Visit(Album* album);
+	virtual void Visit(MusicCollection* musicCollection);
 };
 
 #endif

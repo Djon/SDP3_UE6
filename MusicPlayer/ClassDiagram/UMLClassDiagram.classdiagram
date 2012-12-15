@@ -32,20 +32,6 @@ und exception handling machen</body>
       <body>funktionen in element rufen unterelemente accept auf</body>
     </comment>
   </ownedCommentsInternal>
-  <profileInstances>
-    <packageHasProfileInstances Id="7befdde9-41da-4c67-863d-6a4319f6c091">
-      <profileInstance Id="b551de96-1365-4da3-ada9-253531a735b9" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="a8167ed7-6bee-43f0-bf7a-b7a0794d588f">
-      <profileInstance Id="37ac401c-e101-455a-bca9-ec774f732e97" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
       <class Id="87389dba-c7de-42fa-8546-0109103e29d3" name="MusicPlayer" isAbstract="false" isLeaf="false" isActiveClass="false">
@@ -475,8 +461,8 @@ und exception handling machen</body>
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="91240ddf-0083-41b4-b1c6-e717737ecbc8" name="Albulm*" direction="In" isUnique="false">
-                  <elementDefinition Id="896d9704-2aaa-410b-a834-32cdf2e09bbf" />
+                <parameter Id="add513d9-9552-452e-b653-933d55644a39" name="Album*" direction="In" isUnique="false">
+                  <elementDefinition Id="afa6bd0f-262b-4b1d-ad7b-e555375c76ed" />
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -512,12 +498,12 @@ und exception handling machen</body>
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
-          <operation Id="e9610f50-3782-47f2-8f48-568bd2f954ef" name="SearchVsitor" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="e9610f50-3782-47f2-8f48-568bd2f954ef" name="SearchVisitor" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="7d7a3012-8063-4563-b417-b2a213e45f11" />
             <ownedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="7134e03f-adc8-4784-83c8-27e48ae99179" name="string const&amp;" direction="In" isUnique="false">
-                  <elementDefinition Id="589727df-fa7e-4d91-b61f-392734b5a3a7" />
+                <parameter Id="f5712547-31b1-4c0e-b690-15ccb82d8f6d" name="string const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="81c98d5c-abec-40b5-bb69-29ef2aa6704b" />
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -571,8 +557,8 @@ und exception handling machen</body>
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="8069f8ba-cb60-498c-845d-f000d97bc35e" name="Albulm*" direction="In" isUnique="false">
-                  <elementDefinition Id="ea26a1c9-6c65-4d41-b8c8-ada2d0f31ac3" />
+                <parameter Id="455b09eb-e5b5-4ba2-923f-08398e6c4e2b" name="Album*" direction="In" isUnique="false">
+                  <elementDefinition Id="34e9e3f3-9b6c-4f86-92ac-510f599702d8" />
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -652,8 +638,8 @@ und exception handling machen</body>
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="5431cc3a-e2f1-4982-bbaf-59b0617127d1" name="Albulm*" direction="In" isUnique="false">
-                  <elementDefinition Id="53298f66-0abd-4a57-b201-e903a4bfbc82" />
+                <parameter Id="ef25b0fd-54ef-4c12-9f2f-458a584835e0" name="Album*" direction="In" isUnique="false">
+                  <elementDefinition Id="f68f0a92-d209-4ee8-ae73-b46e5da49e9a" />
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -703,10 +689,6 @@ und exception handling machen</body>
             <enumerationMoniker Id="ac68d7cb-4c21-47b2-9840-b1a74bf8061d" LastKnownName="MusicKind" />
             <elementDefinition Id="dc35f6ad-0b15-4588-a2ec-dd83607d75d7" />
           </dependency>
-          <dependency Id="bea4e4b3-3764-42d0-8a89-e1efd3f6eb71">
-            <classMoniker Id="8cceae33-a433-4076-af86-b1e10df932a1" LastKnownName="MusicComponent" />
-            <elementDefinition Id="c7cf026e-2988-48b4-a319-dabcec1d7cb9" />
-          </dependency>
           <dependency Id="18a861f4-d350-4307-a0d1-b0930284443b">
             <classMoniker Id="5162770c-5063-44b9-b57d-5aac8bf59a13" LastKnownName="Song" />
             <elementDefinition Id="1f58c35a-35e1-4b15-8a6a-7917628f5472" />
@@ -726,6 +708,34 @@ und exception handling machen</body>
             <elementDefinition Id="fc34222c-6e24-4316-9f1b-ead1a5530de7" />
           </generalization>
         </generalsInternal>
+        <targetEnds>
+          <association Id="e8121679-ef65-44f2-9f91-5c4307630bc0" isDerived="false" sourceEndRoleName="" targetEndRoleName="" isLeaf="false" isAbstract="false">
+            <classMoniker Id="8cceae33-a433-4076-af86-b1e10df932a1" LastKnownName="MusicComponent" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="749e995d-57c5-44f8-94d6-330fb114b485" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="c047a283-0472-4edd-a260-418d2ec93fdf" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="e7504f0e-7b18-4a77-a953-7d748a563dee" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="8f52baa8-cda9-4480-b54c-e14e159c83ca" name="Lower" value="*">
+                      <elementDefinition Id="ad15b881-8736-46a7-9bb3-70a4db1044f8" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="ce93ff85-b5bf-4ee9-ab67-a4ea7838d856" name="Upper" value="*">
+                      <elementDefinition Id="4824ef3d-62bf-4ce7-9e36-aec0541ff471" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="4d2ad6c9-64fd-4e10-a3c4-d900d91ea3e8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="280f968d-242c-4563-b68f-8f74d0767ed9" />
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property Id="05e2639c-43e6-4f9f-9b67-c6d0a1583292" name="mMusicComponents" visibility="Private" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="e474599b-e3d6-43b8-9714-80d9227c0144" />
@@ -980,8 +990,8 @@ und exception handling machen</body>
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="5919cf02-0495-4c72-ab44-e1c72630d803" name="Albulm*" direction="In" isUnique="false">
-                  <elementDefinition Id="782bc82a-530d-42ce-89eb-2dc0579d9743" />
+                <parameter Id="34a494df-1348-4360-bc79-57fb77f41fcf" name="Album*" direction="In" isUnique="false">
+                  <elementDefinition Id="d7c3082b-0b94-495b-9da1-3c4e7f2db1be" />
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -1159,5 +1169,19 @@ und exception handling machen</body>
   </packagedElements>
   <package Id="55b6c3c2-69d6-43fd-9d6a-4876192087ff" name="ClassDiagram">
     <elementDefinition Id="499749b2-1d9e-4521-9521-0ac75bfbe602" />
+    <profileInstances>
+      <packageHasProfileInstances Id="7befdde9-41da-4c67-863d-6a4319f6c091">
+        <profileInstance Id="b551de96-1365-4da3-ada9-253531a735b9" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="a8167ed7-6bee-43f0-bf7a-b7a0794d588f">
+        <profileInstance Id="37ac401c-e101-455a-bca9-ec774f732e97" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </logicalClassDesignerModel>

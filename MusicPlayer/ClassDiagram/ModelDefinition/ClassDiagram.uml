@@ -890,8 +890,8 @@ und exception handling machen</body>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="896d9704-2aaa-410b-a834-32cdf2e09bbf"
-                  name="Albulm*"
+                  Id="afa6bd0f-262b-4b1d-ad7b-e555375c76ed"
+                  name="Album*"
                   direction="In"
                   isUnique="false" />
               </operationHasOwnedParameters>
@@ -954,7 +954,7 @@ und exception handling machen</body>
           </operation>
           <operation
             Id="7d7a3012-8063-4563-b417-b2a213e45f11"
-            name="SearchVsitor"
+            name="SearchVisitor"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -963,7 +963,7 @@ und exception handling machen</body>
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="589727df-fa7e-4d91-b61f-392734b5a3a7"
+                  Id="81c98d5c-abec-40b5-bb69-29ef2aa6704b"
                   name="string const&amp;"
                   direction="In"
                   isUnique="false" />
@@ -1055,8 +1055,8 @@ und exception handling machen</body>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="ea26a1c9-6c65-4d41-b8c8-ada2d0f31ac3"
-                  name="Albulm*"
+                  Id="34e9e3f3-9b6c-4f86-92ac-510f599702d8"
+                  name="Album*"
                   direction="In"
                   isUnique="false" />
               </operationHasOwnedParameters>
@@ -1199,8 +1199,8 @@ und exception handling machen</body>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="53298f66-0abd-4a57-b201-e903a4bfbc82"
-                  name="Albulm*"
+                  Id="f68f0a92-d209-4ee8-ae73-b46e5da49e9a"
+                  name="Album*"
                   direction="In"
                   isUnique="false" />
               </operationHasOwnedParameters>
@@ -1288,13 +1288,6 @@ und exception handling machen</body>
               LastKnownLocation="ClassDiagram.uml" />
           </dependency>
           <dependency
-            Id="c7cf026e-2988-48b4-a319-dabcec1d7cb9">
-            <classMoniker
-              Id="31c338b7-1743-4367-8b94-3a4deabc0f14"
-              LastKnownName="MusicComponent"
-              LastKnownLocation="ClassDiagram.uml" />
-          </dependency>
-          <dependency
             Id="1f58c35a-35e1-4b15-8a6a-7917628f5472">
             <classMoniker
               Id="c77ce9bf-716d-4171-a84c-20e43fb47ace"
@@ -1326,6 +1319,58 @@ und exception handling machen</body>
               LastKnownLocation="ClassDiagram.uml" />
           </generalization>
         </generalsInternal>
+        <targetEnds>
+          <association
+            Id="280f968d-242c-4563-b68f-8f74d0767ed9"
+            isDerived="false"
+            sourceEndRoleName=""
+            targetEndRoleName=""
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="31c338b7-1743-4367-8b94-3a4deabc0f14"
+              LastKnownName="MusicComponent"
+              LastKnownLocation="ClassDiagram.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c047a283-0472-4edd-a260-418d2ec93fdf"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="Shared"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4d2ad6c9-64fd-4e10-a3c4-d900d91ea3e8"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="ad15b881-8736-46a7-9bb3-70a4db1044f8"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="4824ef3d-62bf-4ce7-9e36-aec0541ff471"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
         <ownedAttributesInternal>
           <property
             Id="e474599b-e3d6-43b8-9714-80d9227c0144"
@@ -1803,8 +1848,8 @@ und exception handling machen</body>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="782bc82a-530d-42ce-89eb-2dc0579d9743"
-                  name="Albulm*"
+                  Id="d7c3082b-0b94-495b-9da1-3c4e7f2db1be"
+                  name="Album*"
                   direction="In"
                   isUnique="false" />
               </operationHasOwnedParameters>

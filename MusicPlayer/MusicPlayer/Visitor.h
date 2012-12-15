@@ -1,21 +1,23 @@
 ///////////////////////////////////////////////////////////////////////////
-// Workfile : Object.h
+// Workfile : Visitor.h
 // Author : Reinhard Penn, Bernhard Selymes
 // Date : 6.11.2012
-// Description : Header for Object.cpp
+// Description : Interface for Visitors
 ///////////////////////////////////////////////////////////////////////////
 
-#ifndef OBJECT_H
-#define OBJECT_H
+#ifndef VISITOR_H
+#define VISITOR_H
 
-class Object
+class Visitor
 {
 public:
-	//virtual Destructor for baseclass
-	virtual ~Object();
-protected:
-	//Default CTor for baseclass
-	Object();
+	//virtual Destructor
+	virtual ~Visitor();
+
+	virtual void Visit(Song* song) = 0;
+	virtual void Visit(Album* album) = 0;
+	virtual void Visit(MusicCollection* musicCollection) = 0;
+	
 };
 
 #endif

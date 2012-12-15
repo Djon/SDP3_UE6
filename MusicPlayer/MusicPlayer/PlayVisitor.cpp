@@ -1,14 +1,20 @@
 ///////////////////////////////////////////////////////////////////////////
-// Workfile : Object.cpp
+// Workfile : PlayVisitor.cpp
 // Author : Reinhard Penn, Bernhard Selymes
 // Date : 6.11.2012
-// Description : Baseclass with protected constructor
+// Description : Implementation of class PlayVisitor
 ///////////////////////////////////////////////////////////////////////////
 
-#include "Object.h"
+#include "PlayVisitor.h"
 
-Object::Object() 
-{}
+void PlayVisitor::Visit(Song*)
+{
+}
 
-Object::~Object() 
-{}
+void PlayVisitor::Visit(Album*)
+{
+}
+
+void PlayVisitor::Visit(MusicCollection*)
+{
+}

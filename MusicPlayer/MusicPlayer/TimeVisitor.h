@@ -1,21 +1,34 @@
 ///////////////////////////////////////////////////////////////////////////
-// Workfile : Object.h
+// Workfile : TimeVisitor.h
 // Author : Reinhard Penn, Bernhard Selymes
 // Date : 6.11.2012
-// Description : Header for Object.cpp
+// Description : Header of TimeVisitor
 ///////////////////////////////////////////////////////////////////////////
 
-#ifndef OBJECT_H
-#define OBJECT_H
+#ifndef TIMEVISITOR_H
+#define TIMEVISITOR_H
 
-class Object
+#include "Object.h"
+#include "Visitor.h"
+#include "Song.h"
+#include "Album.h"
+#include "MusicCollection.h"
+
+class TimeVisitor :
+	public Visitor,
+	public Object
 {
 public:
-	//virtual Destructor for baseclass
-	virtual ~Object();
-protected:
-	//Default CTor for baseclass
-	Object();
+	TimeVisitor();
+
+	virtual void Visit(Song* song);
+	virtual void Visit(Album* album);
+	virtual void Visit(MusicCollection* musicCollection);
+
+	size_t GetTime() const;
+
+private:
+	size_t mTime;
 };
 
 #endif

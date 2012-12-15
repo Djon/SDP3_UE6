@@ -1,14 +1,28 @@
 ///////////////////////////////////////////////////////////////////////////
-// Workfile : Object.cpp
+// Workfile : SearchVisitor.cpp
 // Author : Reinhard Penn, Bernhard Selymes
 // Date : 6.11.2012
-// Description : Baseclass with protected constructor
+// Description : Implementation of class SearchVisitor
 ///////////////////////////////////////////////////////////////////////////
 
-#include "Object.h"
+#include "SearchVisitor.h"
 
-Object::Object() 
-{}
+SearchVisitor::SearchVisitor(std::string const& name)
+{
+}
 
-Object::~Object() 
-{}
+void SearchVisitor::Visit(Song*)
+{
+}
+
+void SearchVisitor::Visit(Album*)
+{
+}
+
+void SearchVisitor::Visit(MusicCollection*)
+{
+}
+
+TMusicComponents* SearchVisitor::GetResults()
+{
+}
