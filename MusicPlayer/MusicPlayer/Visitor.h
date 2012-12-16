@@ -8,15 +8,19 @@
 #ifndef VISITOR_H
 #define VISITOR_H
 
+#include "Song.h"
+#include "Album.h"
+#include "MusicCollection.h"
+
 class Visitor
 {
 public:
 	//virtual Destructor
 	virtual ~Visitor();
 
-	virtual void Visit(Song* song) = 0;
-	virtual void Visit(Album* album) = 0;
-	virtual void Visit(MusicCollection* musicCollection) = 0;
+	virtual void Visit(Song* song) const = 0;
+	virtual void Visit(Album* album) const = 0;
+	virtual void Visit(MusicCollection* musicCollection) const = 0;
 	
 };
 

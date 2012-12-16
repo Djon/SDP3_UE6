@@ -34,6 +34,14 @@ und exception handling machen</body>
       Id="ec1fbdf6-a8a2-4f71-a9d2-03e4b9a3d37c">
       <body>funktionen in element rufen unterelemente accept auf</body>
     </comment>
+    <comment
+      Id="f3cadb0d-c2e1-4a91-b23b-94e6039bf2fa">
+      <body>album,musicColl: GetTime, return wert void?!?</body>
+    </comment>
+    <comment
+      Id="cc604628-8465-4237-bf4d-2d552d666d5f">
+      <body>changed Search() return value from MusicComponent* to void</body>
+    </comment>
   </ownedCommentsInternal>
   <profileInstances>
     <packageHasProfileInstances
@@ -293,20 +301,20 @@ und exception handling machen</body>
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="d37c43c8-3ee0-4cd4-af21-3aaf8cec464a"
+                  Id="2f9ef834-1bc4-4a89-9611-3530d4c6122a"
                   name="string const&amp;"
                   direction="In"
                   isUnique="false" />
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="f5f77536-1de5-474c-b1cb-cc011d141495"
+                  Id="43220d30-60d2-410f-8c0a-5cf8f1c75f4d"
                   direction="Return"
                   isUnique="false">
                   <type_NamedElement>
                     <undefinedTypeMoniker
-                      Id="3267e9a4-1887-48e4-b908-2938f2db90ad"
-                      LastKnownName="MusicComponent*"
+                      Id="d2af1752-19d4-4620-afba-142f60fa5795"
+                      LastKnownName="void"
                       LastKnownLocation="ClassDiagram.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -828,8 +836,8 @@ und exception handling machen</body>
             isComposite="false">
             <type_NamedElement>
               <undefinedTypeMoniker
-                Id="88c9c83d-54ca-4c12-89e1-29bf02f0bf11"
-                LastKnownName="string const"
+                Id="9fb33c96-1839-4b55-8f2c-b7985ebd079d"
+                LastKnownName="string"
                 LastKnownLocation="ClassDiagram.uml" />
             </type_NamedElement>
           </property>

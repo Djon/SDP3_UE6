@@ -21,9 +21,9 @@ class TimeVisitor :
 public:
 	TimeVisitor();
 
-	virtual void Visit(Song* song);
-	virtual void Visit(Album* album);
-	virtual void Visit(MusicCollection* musicCollection);
+	virtual void Visit(Song* song) const;
+	virtual void Visit(Album* album) const;
+	virtual void Visit(MusicCollection* musicCollection) const;
 
 	size_t GetTime() const;
 

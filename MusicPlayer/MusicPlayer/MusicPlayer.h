@@ -12,6 +12,9 @@
 #include "Object.h"
 #include "MusicComponent.h"
 
+typedef std::list<MusicComponent*>		 TMusicComponents;
+typedef TMusicComponents::const_iterator TMusicComponentsItor;
+
 class MusicPlayer :
 	public Object
 {
@@ -21,8 +24,10 @@ public:
 	size_t GetTotalTime();
 	void Play();
 	void Remove(MusicComponent const * const musicComponent);
-	MusicComponent* Search(std::string const& name);
+	void Search(std::string const& name);
 
+private:
+	TMusicComponents mMusicComponents;
 };
 
 #endif

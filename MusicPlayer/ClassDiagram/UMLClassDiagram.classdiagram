@@ -31,6 +31,14 @@ und exception handling machen</body>
       <elementDefinition Id="ec1fbdf6-a8a2-4f71-a9d2-03e4b9a3d37c" />
       <body>funktionen in element rufen unterelemente accept auf</body>
     </comment>
+    <comment Id="91d0b429-a489-4d28-a01c-c271ec2720e3">
+      <elementDefinition Id="f3cadb0d-c2e1-4a91-b23b-94e6039bf2fa" />
+      <body>album,musicColl: GetTime, return wert void?!?</body>
+    </comment>
+    <comment Id="5ed36a55-589a-4711-a1ca-36b01bf33ef0">
+      <elementDefinition Id="cc604628-8465-4237-bf4d-2d552d666d5f" />
+      <body>changed Search() return value from MusicComponent* to void</body>
+    </comment>
   </ownedCommentsInternal>
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
@@ -163,15 +171,15 @@ und exception handling machen</body>
             <elementDefinition Id="034a5cdf-5887-43d8-8bde-b8aca5b9c453" />
             <ownedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="16bbe93a-b81c-4d37-bbfd-bb8f3d7f8764" name="string const&amp;" direction="In" isUnique="false">
-                  <elementDefinition Id="d37c43c8-3ee0-4cd4-af21-3aaf8cec464a" />
+                <parameter Id="7cf5b57c-b57b-448c-a452-ddcb97cb24f9" name="string const&amp;" direction="In" isUnique="false">
+                  <elementDefinition Id="2f9ef834-1bc4-4a89-9611-3530d4c6122a" />
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="67bf260b-593a-4ff6-8279-e11162c74383" direction="Return" isUnique="false">
-                  <elementDefinition Id="f5f77536-1de5-474c-b1cb-cc011d141495" />
+                <parameter Id="e7466c2a-8f39-4772-b811-05ba73d90a64" direction="Return" isUnique="false">
+                  <elementDefinition Id="43220d30-60d2-410f-8c0a-5cf8f1c75f4d" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="0c1d00bf-b2a5-4dfd-8a5f-665f2ff673b3" LastKnownName="MusicComponent*" />
+                    <referencedTypeMoniker Id="78b1ad83-61e2-4c94-80dd-9d884067fc99" LastKnownName="void" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -426,7 +434,7 @@ und exception handling machen</body>
           <property Id="cc82e988-6070-458c-b5ee-a7c174399e01" name="mName" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="0b9af389-4dae-4820-ab87-6b9c56abba58" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="f60070f1-83bc-414a-a080-1314e92ec666" LastKnownName="string const" />
+              <referencedTypeMoniker Id="b5aef4c2-7329-44f7-ab15-689c880ca39d" LastKnownName="string" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
@@ -1162,8 +1170,8 @@ und exception handling machen</body>
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="f60070f1-83bc-414a-a080-1314e92ec666" name="string const" isAbstract="false" isLeaf="false" cachedFullName="string const">
-        <elementDefinition Id="88c9c83d-54ca-4c12-89e1-29bf02f0bf11" />
+      <referencedType Id="b5aef4c2-7329-44f7-ab15-689c880ca39d" name="string" isAbstract="false" isLeaf="false" cachedFullName="string">
+        <elementDefinition Id="9fb33c96-1839-4b55-8f2c-b7985ebd079d" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>

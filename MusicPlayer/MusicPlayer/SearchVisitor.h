@@ -9,13 +9,14 @@
 #define SEARCHVISITOR_H
 
 #include <string>
+#include <list>
 #include "Object.h"
 #include "Visitor.h"
 #include "Song.h"
 #include "Album.h"
 #include "MusicCollection.h"
 
-typedef list<MusicComponent*> TMusicComponents;
+typedef std::list<MusicComponent*> TMusicComponents;
 
 class SearchVisitor :
 	public Visitor,
@@ -24,14 +25,14 @@ class SearchVisitor :
 public:
 	SearchVisitor(std::string const& name);
 
-	virtual void Visit(Song* song);
-	virtual void Visit(Album* album);
-	virtual void Visit(MusicCollection* musicCollection);
+	virtual void Visit(Song* song) const;
+	virtual void Visit(Album* album) const;
+	virtual void Visit(MusicCollection* musicCollection) const;
 
 	TMusicComponents* GetResults();
 
 private:
-	std::string const mName;	//really const?
+	std::string mName;
 	TMusicComponents mResults;
 };
 
