@@ -5,23 +5,35 @@
 // Description : Implementation of class Song
 ///////////////////////////////////////////////////////////////////////////
 
+#include <iostream>
 #include "Song.h"
 
 //CTor
 Song::Song(std::string Name, std::string Album, std::string Interpret, size_t time)
+	: mAlbum(Album),mInterpret(Interpret),mTime(time)
 {
-
+	mName = Name;
 }
 
 //virtual Destructor
 Song::~Song()
-{
-
-}
+{}
 
 void Song::Accept(Visitor* visitor)
 {
-
+	try
+	{
+		if(visitor == 0)
+		{
+			std::string error = "no valid pointer";
+			throw (error); 
+		}
+		visitor->Visit(this);
+	}
+	catch (std::string const& error)
+	{
+		std::cout << "Error in Song::Accept: " << error << std::endl;
+	}
 }
 
 void Song::Play()
@@ -31,5 +43,5 @@ void Song::Play()
 
 size_t Song::GetTime()
 {
-
+	return mTime;
 }

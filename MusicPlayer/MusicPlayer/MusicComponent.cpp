@@ -9,11 +9,9 @@
 
 //virtual Destructor for baseclass
 MusicComponent::~MusicComponent()
-{
-
-}
+{}
 
 std::string MusicComponent::GetName()
 {
-
+	return mName;
 }
