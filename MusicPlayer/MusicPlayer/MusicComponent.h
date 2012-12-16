@@ -11,7 +11,9 @@
 #include <list>
 #include <string>
 #include "Object.h"
-#include "Visitor.h"
+//#include "Visitor.h"
+
+class Visitor;
 
 class MusicComponent : 
 	public Object

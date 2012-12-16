@@ -25,9 +25,9 @@ class SearchVisitor :
 public:
 	SearchVisitor(std::string const& name);
 
-	virtual void Visit(Song* song) const;
-	virtual void Visit(Album* album) const;
-	virtual void Visit(MusicCollection* musicCollection) const;
+	virtual void Visit(Song* song);
+	virtual void Visit(Album* album);
+	virtual void Visit(MusicCollection* musicCollection);
 
 	TMusicComponents* GetResults();
 

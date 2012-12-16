@@ -89,6 +89,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Album.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="MusicCollection.cpp" />
     <ClCompile Include="MusicComponent.cpp" />
     <ClCompile Include="MusicFactory.cpp" />

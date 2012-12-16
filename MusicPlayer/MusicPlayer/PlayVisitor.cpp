@@ -9,7 +9,7 @@
 #include <iostream>
 #include "PlayVisitor.h"
 
-void PlayVisitor::Visit(Song* song) const
+void PlayVisitor::Visit(Song* song)
 {
 	try
 	{
@@ -18,7 +18,7 @@ void PlayVisitor::Visit(Song* song) const
 			std::string error = "no valid pointer";
 			throw (error); 
 		}
-		song->play();
+		song->Play();
 	}
 	catch (std::string const& error)
 	{
@@ -26,7 +26,7 @@ void PlayVisitor::Visit(Song* song) const
 	}
 }
 
-void PlayVisitor::Visit(Album* album) const
+void PlayVisitor::Visit(Album* album)
 {
 	try
 	{
@@ -35,7 +35,7 @@ void PlayVisitor::Visit(Album* album) const
 			std::string error = "no valid pointer";
 			throw (error); 
 		}
-		album->play();
+		album->Play();
 	}
 	catch (std::string const& error)
 	{
@@ -43,7 +43,7 @@ void PlayVisitor::Visit(Album* album) const
 	}
 }
 
-void PlayVisitor::Visit(MusicCollection* musicCollection) const
+void PlayVisitor::Visit(MusicCollection* musicCollection)
 {
 	try
 	{
@@ -52,7 +52,7 @@ void PlayVisitor::Visit(MusicCollection* musicCollection) const
 			std::string error = "no valid pointer";
 			throw (error); 
 		}
-		musicCollection->play();
+		musicCollection->Play();
 	}
 	catch (std::string const& error)
 	{

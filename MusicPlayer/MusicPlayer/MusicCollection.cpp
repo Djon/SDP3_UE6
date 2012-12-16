@@ -8,6 +8,7 @@
 #include <iostream>
 #include <algorithm>
 #include "MusicCollection.h"
+#include "Visitor.h"
 
 //CTor
 MusicCollection::MusicCollection(std::string Name)

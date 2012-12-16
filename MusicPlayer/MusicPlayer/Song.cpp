@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include "Song.h"
+#include "Visitor.h"
 
 //CTor
 Song::Song(std::string Name, std::string Album, std::string Interpret, size_t time)

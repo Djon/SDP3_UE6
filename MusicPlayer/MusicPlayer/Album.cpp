@@ -8,6 +8,7 @@
 #include <algorithm>
 #include <iostream>
 #include "Album.h"
+#include "Visitor.h"
 
 //CTor
 Album::Album(std::string Name, std::string Interpret)

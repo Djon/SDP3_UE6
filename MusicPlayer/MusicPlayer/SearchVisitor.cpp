@@ -25,7 +25,7 @@ SearchVisitor::SearchVisitor(std::string const& name)
 	}
 }
 
-void SearchVisitor::Visit(Song* song) const
+void SearchVisitor::Visit(Song* song)
 {
 	try
 	{
@@ -46,7 +46,7 @@ void SearchVisitor::Visit(Song* song) const
 	}
 }
 
-void SearchVisitor::Visit(Album* album) const
+void SearchVisitor::Visit(Album* album)
 {
 	try
 	{
@@ -67,7 +67,7 @@ void SearchVisitor::Visit(Album* album) const
 	}
 }
 
-void SearchVisitor::Visit(MusicCollection* musicCollection) const
+void SearchVisitor::Visit(MusicCollection* musicCollection)
 {
 	try
 	{
@@ -90,17 +90,5 @@ void SearchVisitor::Visit(MusicCollection* musicCollection) const
 
 TMusicComponents* SearchVisitor::GetResults()
 {
-	try
-	{
-		if(mResults == 0)
-		{
-			std::string error = "no valid pointer";
-			throw (error); 
-		}
-		return &mResults;
-	}
-	catch (std::string const& error)
-	{
-		std::cout << "error in SearchVisitor::GetResults(): " << error << std::endl;
-	}
+	return &mResults;
 }

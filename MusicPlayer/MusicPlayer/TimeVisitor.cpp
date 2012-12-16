@@ -9,12 +9,7 @@
 #include <iostream>
 #include "TimeVisitor.h"
 
-TimeVisitor::TimeVisitor()
-{
-	mTime = 0;
-}
-
-void TimeVisitor::Visit(Song* song) const
+void TimeVisitor::Visit(Song* song)
 {
 	try
 	{
@@ -31,7 +26,7 @@ void TimeVisitor::Visit(Song* song) const
 	}
 }
 
-void TimeVisitor::Visit(Album* album) const
+void TimeVisitor::Visit(Album* album)
 {
 	try
 	{
@@ -40,7 +35,7 @@ void TimeVisitor::Visit(Album* album) const
 			std::string error = "no valid pointer";
 			throw (error); 
 		}
-		mTime = mTime + album->GetTime();
+		album->GetTime();
 	}
 	catch (std::string const& error)
 	{
@@ -48,7 +43,7 @@ void TimeVisitor::Visit(Album* album) const
 	}
 }
 
-void TimeVisitor::Visit(MusicCollection* musicCollection) const
+void TimeVisitor::Visit(MusicCollection* musicCollection)
 {
 	try
 	{
@@ -57,7 +52,7 @@ void TimeVisitor::Visit(MusicCollection* musicCollection) const
 			std::string error = "no valid pointer";
 			throw (error); 
 		}
-		mTime = mTime + musicCollection->GetTime();
+		musicCollection->GetTime();
 	}
 	catch (std::string const& error)
 	{

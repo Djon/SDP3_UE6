@@ -14,5 +14,5 @@ MusicFactory::~MusicFactory()
 
 MusicComponent* MusicFactory::CreateMusicComponent(TMusicKind& kind)
 {
-
+	return 0;
 }

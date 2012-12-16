@@ -19,11 +19,11 @@ class TimeVisitor :
 	public Object
 {
 public:
-	TimeVisitor();
+	TimeVisitor() : mTime(0) {}
 
-	virtual void Visit(Song* song) const;
-	virtual void Visit(Album* album) const;
-	virtual void Visit(MusicCollection* musicCollection) const;
+	void Visit(Song* song);
+	void Visit(Album* album);
+	void Visit(MusicCollection* musicCollection);
 
 	size_t GetTime() const;
 

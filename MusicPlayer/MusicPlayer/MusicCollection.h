@@ -8,7 +8,7 @@
 #ifndef MUSICCOLLECTION_H
 #define MUSICCOLLECTION_H
 
-#include "MusicComponent.h
+#include "MusicComponent.h"
 
 class MusicCollection : 
 	public MusicComponent

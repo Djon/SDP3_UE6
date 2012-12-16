@@ -7,7 +7,11 @@
 
 #include <iostream>
 #include <algorithm>
+#include <iterator>
 #include "MusicPlayer.h"
+#include "TimeVisitor.h"
+#include "SearchVisitor.h"
+#include "PlayVisitor.h"
 
 void MusicPlayer::Add(MusicComponent* musicComponent)
 {
@@ -26,7 +30,7 @@ void MusicPlayer::Add(MusicComponent* musicComponent)
 	}
 }
 
-size_t MusicPlayer::GetTime(MusicComponent const * const musicComponent)
+size_t MusicPlayer::GetTime(MusicComponent * const musicComponent)
 {
 	try
 	{
@@ -39,9 +43,10 @@ size_t MusicPlayer::GetTime(MusicComponent const * const musicComponent)
 		//check if element is in list
 		bool exists = false;
 		TMusicComponentsItor itor = mMusicComponents.begin();
+		
 		for(; itor != mMusicComponents.end(); ++itor)
 		{
-			if(itor == musicComponent)
+			if(*itor == musicComponent)
 			{
 				exists = true;
 			}
@@ -52,7 +57,7 @@ size_t MusicPlayer::GetTime(MusicComponent const * const musicComponent)
 			throw (error); 
 		}
 
-		TimeVisitor* timeVisitor = new TimeVisitor();
+		TimeVisitor* timeVisitor = new TimeVisitor;
 		musicComponent->Accept(timeVisitor);
 		size_t tmp = timeVisitor->GetTime();
 		delete timeVisitor;
@@ -74,12 +79,12 @@ size_t MusicPlayer::GetTotalTime()
 {
 	try
 	{
-		TimeVisitor* timeVisitor = new TimeVisitor();
+		TimeVisitor* timeVisitor = new TimeVisitor;
 		
 		TMusicComponentsItor itor = mMusicComponents.begin();
 		for(; itor != mMusicComponents.end(); ++itor)
 		{
-			itor->Accept(timeVisitor);
+			(*itor)->Accept(timeVisitor);
 		}
 
 		size_t tmp = timeVisitor->GetTime();
@@ -97,12 +102,12 @@ void MusicPlayer::Play()
 {
 	try
 	{
-		PlayVisitor* playVisitor = new PlayVisitor();
+		PlayVisitor* playVisitor = new PlayVisitor;
 
 		TMusicComponentsItor itor = mMusicComponents.begin();
 		for(; itor != mMusicComponents.end(); ++itor)
 		{
-			itor->Accept(playVisitor);
+			(*itor)->Accept(playVisitor);
 		}
 
 		delete playVisitor; playVisitor = 0;
@@ -113,7 +118,7 @@ void MusicPlayer::Play()
 	}
 }
 
-void MusicPlayer::Remove(MusicComponent const * const musicComponent)
+void MusicPlayer::Remove(MusicComponent * const musicComponent)
 {
 	try
 	{
@@ -147,7 +152,7 @@ void MusicPlayer::Search(std::string const& name)
 		TMusicComponentsItor itor = mMusicComponents.begin();
 		for(; itor != mMusicComponents.end(); ++itor)
 		{
-			itor->Accept(searchVisitor);
+			(*itor)->Accept(searchVisitor);
 		}
 		
 		TMusicComponents* tmp;
@@ -156,7 +161,7 @@ void MusicPlayer::Search(std::string const& name)
 		itor = tmp->begin();
 		for(; itor != tmp->end(); ++itor)
 		{
-			std::cout << tmp->GetName() << std::endl;
+			std::cout << (*itor)->GetName() << std::endl;
 		}
 		
 		delete searchVisitor; searchVisitor = 0;

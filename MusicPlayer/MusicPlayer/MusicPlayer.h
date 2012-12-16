@@ -13,17 +13,17 @@
 #include "MusicComponent.h"
 
 typedef std::list<MusicComponent*>		 TMusicComponents;
-typedef TMusicComponents::const_iterator TMusicComponentsItor;
+typedef TMusicComponents::iterator TMusicComponentsItor;
 
 class MusicPlayer :
 	public Object
 {
 public:
 	void Add(MusicComponent* musicComponent);
-	size_t GetTime(MusicComponent const * const musicComponent);
+	size_t GetTime(MusicComponent * const musicComponent);
 	size_t GetTotalTime();
 	void Play();
-	void Remove(MusicComponent const * const musicComponent);
+	void Remove(MusicComponent * const musicComponent);
 	void Search(std::string const& name);
 
 private:
