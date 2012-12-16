@@ -78,13 +78,13 @@
     <ClInclude Include="MusicCollection.h" />
     <ClInclude Include="MusicComponent.h" />
     <ClInclude Include="MusicFactory.h" />
-    <ClInclude Include="MusicKind.h" />
     <ClInclude Include="MusicPlayer.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="PlayVisitor.h" />
     <ClInclude Include="SearchVisitor.h" />
     <ClInclude Include="Song.h" />
     <ClInclude Include="TimeVisitor.h" />
+    <ClInclude Include="TMusicKind.h" />
     <ClInclude Include="Visitor.h" />
   </ItemGroup>
   <ItemGroup>
