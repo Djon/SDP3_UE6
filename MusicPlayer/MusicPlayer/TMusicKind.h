@@ -1,18 +1,18 @@
 ///////////////////////////////////////////////////////////////////////////
-// Workfile : MusicFactory.cpp
+// Workfile : TMusicKind.h
 // Author : Reinhard Penn, Bernhard Selymes
 // Date : 16.12.2012
-// Description : Implementation of class MusicFactory
+// Description : Enum for Musickind
 ///////////////////////////////////////////////////////////////////////////
 
-#include "MusicFactory.h"
+#ifndef TMUSICKIND_H
+#define TMUSICKIND_H
 
-MusicFactory::~MusicFactory()
+enum TMusicKind
 {
+	MusicCollection,
+	Album,
+	Song
+};
 
-}
-
-MusicComponent* MusicFactory::CreateMusicComponent(TMusicKind& kind)
-{
-
-}
+#endif

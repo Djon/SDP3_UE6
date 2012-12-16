@@ -1,14 +1,19 @@
 ///////////////////////////////////////////////////////////////////////////
-// Workfile : Object.cpp
+// Workfile : MusicComponent.cpp
 // Author : Reinhard Penn, Bernhard Selymes
-// Date : 6.11.2012
-// Description : Baseclass with protected constructor
+// Date : 16.12.2012
+// Description : Implementation of class MusicComponent
 ///////////////////////////////////////////////////////////////////////////
 
-#include "Object.h"
+#include "MusicComponent.h"
 
-Object::Object() 
-{}
+//virtual Destructor for baseclass
+MusicComponent::~MusicComponent()
+{
 
-Object::~Object() 
-{}
+}
+
+std::string MusicComponent::GetName()
+{
+
+}

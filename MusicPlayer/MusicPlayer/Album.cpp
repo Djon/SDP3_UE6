@@ -1,14 +1,35 @@
 ///////////////////////////////////////////////////////////////////////////
-// Workfile : Object.cpp
+// Workfile : Album.cpp
 // Author : Reinhard Penn, Bernhard Selymes
-// Date : 6.11.2012
-// Description : Baseclass with protected constructor
+// Date : 16.12.2012
+// Description : Implementation of class Album
 ///////////////////////////////////////////////////////////////////////////
 
-#include "Object.h"
+#include "Album.h"
 
-Object::Object() 
-{}
+//CTor
+Album::Album(std::string Name, std::string Interpret)
+{
 
-Object::~Object() 
-{}
+}
+
+//virtual Destructor
+Album::~Album()
+{
+
+}
+
+void Album::Accept(Visitor* visitor)
+{
+
+}
+
+void Album::Play()
+{
+
+}
+
+void Album::GetTime()
+{
+
+}

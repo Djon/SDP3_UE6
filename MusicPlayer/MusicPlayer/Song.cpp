@@ -1,14 +1,35 @@
 ///////////////////////////////////////////////////////////////////////////
-// Workfile : Object.cpp
+// Workfile : Song.cpp
 // Author : Reinhard Penn, Bernhard Selymes
-// Date : 6.11.2012
-// Description : Baseclass with protected constructor
+// Date : 16.12.2012
+// Description : Implementation of class Song
 ///////////////////////////////////////////////////////////////////////////
 
-#include "Object.h"
+#include "Song.h"
 
-Object::Object() 
-{}
+//CTor
+Song::Song(std::string Name, std::string Album, std::string Interpret, size_t time)
+{
 
-Object::~Object() 
-{}
+}
+
+//virtual Destructor
+Song::~Song()
+{
+
+}
+
+void Song::Accept(Visitor* visitor)
+{
+
+}
+
+void Song::Play()
+{
+
+}
+
+size_t Song::GetTime()
+{
+
+}

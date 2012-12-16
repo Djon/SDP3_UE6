@@ -1,14 +1,35 @@
 ///////////////////////////////////////////////////////////////////////////
-// Workfile : Object.cpp
+// Workfile : MusicCollection.cpp
 // Author : Reinhard Penn, Bernhard Selymes
-// Date : 6.11.2012
-// Description : Baseclass with protected constructor
+// Date : 16.12.2012
+// Description : Implementation of class MusicCollection
 ///////////////////////////////////////////////////////////////////////////
 
-#include "Object.h"
+#include "MusicCollection.h"
 
-Object::Object() 
-{}
+//CTor
+MusicCollection::MusicCollection(std::string Name)
+{
 
-Object::~Object() 
-{}
+}
+
+//virtual Destructor
+MusicCollection::~MusicCollection()
+{
+
+}
+
+void MusicCollection::Accept(Visitor* visitor)
+{
+
+}
+
+void MusicCollection::Play()
+{
+
+}
+
+void MusicCollection::GetTime()
+{
+
+}

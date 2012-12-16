@@ -1,21 +1,35 @@
 ///////////////////////////////////////////////////////////////////////////
-// Workfile : Object.h
+// Workfile : Song.h
 // Author : Reinhard Penn, Bernhard Selymes
-// Date : 6.11.2012
-// Description : Header for Object.cpp
+// Date : 16.12.2012
+// Description : Header for Song.cpp
 ///////////////////////////////////////////////////////////////////////////
 
-#ifndef OBJECT_H
-#define OBJECT_H
+#ifndef SONG_H
+#define SONG_H
 
-class Object
+#include "MusicComponent.h"
+
+class Song : 
+	public MusicComponent
 {
 public:
-	//virtual Destructor for baseclass
-	virtual ~Object();
-protected:
-	//Default CTor for baseclass
-	Object();
+	//CTor
+	Song(std::string Name, std::string Album, std::string Interpret, size_t time);
+
+	//virtual Destructor
+	virtual ~Song();
+
+	virtual void Accept(Visitor* visitor);	
+	virtual void Play();
+
+	size_t GetTime();
+
+private:
+	std::string mAlbum;
+	std::string mInterpret;
+
+	size_t mTime;
 };
 
 #endif

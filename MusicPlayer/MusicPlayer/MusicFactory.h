@@ -1,21 +1,28 @@
 ///////////////////////////////////////////////////////////////////////////
-// Workfile : Object.h
+// Workfile : MusicFactory.h
 // Author : Reinhard Penn, Bernhard Selymes
-// Date : 6.11.2012
-// Description : Header for Object.cpp
+// Date : 16.12.2012
+// Description : Header for MusicFactory.cpp
 ///////////////////////////////////////////////////////////////////////////
 
-#ifndef OBJECT_H
-#define OBJECT_H
+#ifndef MUSICFACTORY_H
+#define MUSICFACTORY_H
 
-class Object
+#include "Object.h"
+#include "TMusicKind.h"
+#include "MusicComponent.h"
+
+class MusicFactory : 
+	public Object
 {
 public:
-	//virtual Destructor for baseclass
-	virtual ~Object();
-protected:
-	//Default CTor for baseclass
-	Object();
+	//virtual Destructor
+	virtual ~MusicFactory();
+
+	MusicComponent* CreateMusicComponent(TMusicKind& kind); 
+
+private:
+	MusicList mMusicComponents;
 };
 
 #endif
