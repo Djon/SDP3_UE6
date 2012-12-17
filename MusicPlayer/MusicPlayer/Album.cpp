@@ -92,3 +92,8 @@ std::string Album::GetInterpret()
 {
 	return mInterpret;
 }
+
+TMusicKind Album::GetType()
+{
+	return mType;
+}

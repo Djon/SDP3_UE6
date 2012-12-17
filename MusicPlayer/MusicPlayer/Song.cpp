@@ -58,3 +58,8 @@ void Song::AddMusic(MusicComponent* m)
 	std::string error = "This functions is not implemented and should not be used";
 	std::cerr << "Error in Song::AddMusic: " << error << std::endl;
 }
+
+TMusicKind Song::GetType()
+{
+	return mType;
+}
