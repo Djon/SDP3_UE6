@@ -406,6 +406,31 @@ und exception handling machen</body>
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation Id="523fabf8-2703-4305-97cf-ef58595089b9" name="Song" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3cd87186-1a5d-4868-aea7-de75ca990b31" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b670e47b-1859-4f80-9e20-4a35b3c74339" name="string" direction="In" isUnique="false">
+                  <elementDefinition Id="42505ee8-53e9-43f8-a1f5-189c7d27feba" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f3200324-8bcf-4710-8451-d2885a0987c7" name="string" direction="In" isUnique="false">
+                  <elementDefinition Id="fdbc58ed-8be4-43a8-af94-52c493845363" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="751272e1-90b4-4d45-8ef5-16706393655d" name="string" direction="In" isUnique="false">
+                  <elementDefinition Id="c0c4fccd-a09d-428b-9fad-43214a80cf57" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a4d819e8-93d1-44d3-a7f6-3950f86be04c" name="size_t" direction="In" isUnique="false">
+                  <elementDefinition Id="f692c514-6248-4a4f-8032-64a5676eb575" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>

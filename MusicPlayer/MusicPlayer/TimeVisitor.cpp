@@ -35,7 +35,7 @@ void TimeVisitor::Visit(Album* album)
 			std::string error = "no valid pointer";
 			throw (error); 
 		}
-		album->GetTime();
+		album->GetTime(this);
 	}
 	catch (std::string const& error)
 	{
@@ -52,7 +52,7 @@ void TimeVisitor::Visit(MusicCollection* musicCollection)
 			std::string error = "no valid pointer";
 			throw (error); 
 		}
-		musicCollection->GetTime();
+		musicCollection->GetTime(this);
 	}
 	catch (std::string const& error)
 	{

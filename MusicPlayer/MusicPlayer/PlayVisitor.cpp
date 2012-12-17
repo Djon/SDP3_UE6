@@ -8,6 +8,22 @@
 #include <string>
 #include <iostream>
 #include "PlayVisitor.h"
+#include "TimeVisitor.h"
+
+PlayVisitor::PlayVisitor()
+{
+	mCounter = 0;
+}
+
+int PlayVisitor::GetMinutes(size_t const seconds)
+{
+	return seconds / 60;
+}
+
+int PlayVisitor::GetSeconds(size_t const seconds)
+{
+	return seconds % 60;
+}
 
 void PlayVisitor::Visit(Song* song)
 {
@@ -18,7 +34,8 @@ void PlayVisitor::Visit(Song* song)
 			std::string error = "no valid pointer";
 			throw (error); 
 		}
-		song->Play();
+		mCounter++;
+		std::cout << mCounter << ". " << song->GetName() << " << " << GetMinutes(song->GetTime()) << ":" << GetSeconds(song->GetTime()) << " << " << song->GetInterpret() << std::endl;
 	}
 	catch (std::string const& error)
 	{
@@ -35,7 +52,16 @@ void PlayVisitor::Visit(Album* album)
 			std::string error = "no valid pointer";
 			throw (error); 
 		}
-		album->Play();
+
+		TimeVisitor* timeVisitor = new TimeVisitor;
+
+		album->Accept(timeVisitor);
+		timeVisitor->GetTime();
+		
+		std::cout << "Album: " << album->GetName() << "(" << album->GetNumberOfEntries() << " Songs)" << GetMinutes(timeVisitor->GetTime()) << ":" << GetSeconds(timeVisitor->GetTime()) << std::endl;
+		album->Play(this);
+
+		delete timeVisitor; timeVisitor = 0;
 	}
 	catch (std::string const& error)
 	{
@@ -52,7 +78,16 @@ void PlayVisitor::Visit(MusicCollection* musicCollection)
 			std::string error = "no valid pointer";
 			throw (error); 
 		}
-		musicCollection->Play();
+		
+		TimeVisitor* timeVisitor = new TimeVisitor;
+
+		musicCollection->Accept(timeVisitor);
+		timeVisitor->GetTime();
+
+		std::cout << "Collection: " << musicCollection->GetName() << "(" << musicCollection->GetNumberOfEntries() << " Songs)" << GetMinutes(timeVisitor->GetTime()) << ":" << GetSeconds(timeVisitor->GetTime()) << std::endl;
+		musicCollection->Play(this);
+
+		delete timeVisitor; timeVisitor = 0;
 	}
 	catch (std::string const& error)
 	{
