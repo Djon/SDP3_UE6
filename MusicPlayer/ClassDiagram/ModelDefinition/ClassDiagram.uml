@@ -3,46 +3,6 @@
   dslVersion="1.0.0.0"
   Id="499749b2-1d9e-4521-9521-0ac75bfbe602"
   name="ClassDiagram" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
-  <ownedCommentsInternal>
-    <comment
-      Id="578ff94b-e7e4-4241-93bf-5d73014008fd">
-      <body>GetTime zuerst schaun ob music in liste ist
-Null pointer auch nicht vergessen</body>
-    </comment>
-    <comment
-      Id="478719f1-3554-4ad1-bc40-172b50fe9efd">
-      <body>Null Pointer prüfen von visitor</body>
-    </comment>
-    <comment
-      Id="9b729a7d-f011-427b-847d-110cf4931e1a">
-      <body>ev zeit nach zurückgeben auf null setzen (ev. PopTime)</body>
-    </comment>
-    <comment
-      Id="0a652376-77ab-466b-9584-5652cec5cdad">
-      <body>teilstrings mit contain testen</body>
-    </comment>
-    <comment
-      Id="cf56e72c-571f-4a2d-93a7-5e54cea9b343">
-      <body>nullpointer beachten
-und exception handling machen</body>
-    </comment>
-    <comment
-      Id="8c676640-2e25-406f-8ae0-ff8958481b33">
-      <body>bei neuen visitor anlegen exception handling(bad alloc exception)</body>
-    </comment>
-    <comment
-      Id="ec1fbdf6-a8a2-4f71-a9d2-03e4b9a3d37c">
-      <body>funktionen in element rufen unterelemente accept auf</body>
-    </comment>
-    <comment
-      Id="f3cadb0d-c2e1-4a91-b23b-94e6039bf2fa">
-      <body>album,musicColl: GetTime, return wert void?!?</body>
-    </comment>
-    <comment
-      Id="cc604628-8465-4237-bf4d-2d552d666d5f">
-      <body>changed Search() return value from MusicComponent* to void</body>
-    </comment>
-  </ownedCommentsInternal>
   <profileInstances>
     <packageHasProfileInstances
       Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
@@ -361,7 +321,7 @@ und exception handling machen</body>
         isActiveClass="false">
         <generalsInternal>
           <generalization
-            Id="0f966872-81b2-43b8-9de6-9d0e0c53a690"
+            Id="0899d61b-6989-4211-9ff9-9f746467396a"
             isSubstitutable="false">
             <classMoniker
               Id="31c338b7-1743-4367-8b94-3a4deabc0f14"
@@ -460,25 +420,6 @@ und exception handling machen</body>
                 LastKnownLocation="ClassDiagram.uml" />
             </type_NamedElement>
           </property>
-          <property
-            Id="ad429efd-0fda-4ec8-b0b0-d7dbcd3118fe"
-            name="mTmpVisitor"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="7665dbe2-6f39-4699-8811-8ea9e68b9716"
-                LastKnownName="Visitor*"
-                LastKnownLocation="ClassDiagram.uml" />
-            </type_NamedElement>
-          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
@@ -534,6 +475,13 @@ und exception handling machen</body>
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="56c3da15-7634-40df-8eb0-df4834748659"
+                  name="Visitor*"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
           <operation
@@ -584,6 +532,78 @@ und exception handling machen</body>
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="733fef50-7ce6-415d-a172-f30b28241e3b"
+            name="GetType"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b139a9fb-3f71-4791-b706-14edfd16d29a"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <enumerationMoniker
+                      Id="26b60824-ceee-4fec-9465-970939b86007"
+                      LastKnownName="TMusicKind"
+                      LastKnownLocation="ClassDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="7c56eae8-1ef5-4f4a-b5a9-03a3c92c1149"
+            name="GetInterpret"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5a5f024e-a852-4deb-b543-0670831ab78f"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="9fb33c96-1839-4b55-8f2c-b7985ebd079d"
+                      LastKnownName="string"
+                      LastKnownLocation="ClassDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="02ea8591-c522-47d1-b8af-4786cc7d4898"
+            name="GetNumberOfEntries"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="1a84634f-b136-4d43-a513-aab1231c322c"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="fc072574-994f-425d-8b38-15bec4e4605e"
+                      LastKnownName="size_t"
+                      LastKnownLocation="ClassDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -596,7 +616,7 @@ und exception handling machen</body>
         isActiveClass="false">
         <generalsInternal>
           <generalization
-            Id="9bb22a1b-c44f-4eed-b1bf-472d95565d51"
+            Id="96858312-f0ae-4a3e-914c-f9889dbc4c07"
             isSubstitutable="false">
             <classMoniker
               Id="31c338b7-1743-4367-8b94-3a4deabc0f14"
@@ -696,30 +716,6 @@ und exception handling machen</body>
             </ownedParameters>
           </operation>
           <operation
-            Id="71398073-8a53-4f52-807a-0adc997fab71"
-            name="Play"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false">
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="b27935c5-43ea-4068-8dac-bf331d1937a5"
-                  direction="Return"
-                  isUnique="false">
-                  <type_NamedElement>
-                    <undefinedTypeMoniker
-                      Id="d2af1752-19d4-4620-afba-142f60fa5795"
-                      LastKnownName="void"
-                      LastKnownLocation="ClassDiagram.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-          <operation
             Id="a5e321f1-054a-4415-874f-68798b370233"
             name="GetTime"
             isLeaf="false"
@@ -806,6 +802,78 @@ und exception handling machen</body>
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="b591d1f2-0e67-4651-bc69-67186dd71774"
+            name="GetType"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5865edc5-c4e8-4aea-8751-d1a36fada306"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <enumerationMoniker
+                      Id="26b60824-ceee-4fec-9465-970939b86007"
+                      LastKnownName="TMusicKind"
+                      LastKnownLocation="ClassDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="bb0b1758-ed54-41cb-bce4-01d2cdd1ca6d"
+            name="GetInterpret"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="50119179-43d9-4837-a14b-d642a3bb2547"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="9fb33c96-1839-4b55-8f2c-b7985ebd079d"
+                      LastKnownName="string"
+                      LastKnownLocation="ClassDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="76792a5f-aa08-4271-a4d2-a5a2f4b33ad6"
+            name="GetAlbum"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a2fc4f9f-2d8c-45e9-9fda-06630e69ea33"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="9fb33c96-1839-4b55-8f2c-b7985ebd079d"
+                      LastKnownName="string"
+                      LastKnownLocation="ClassDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -826,7 +894,7 @@ und exception handling machen</body>
         isActiveClass="false">
         <suppliersInternal>
           <interfaceRealization
-            Id="c2840964-6ac7-4bbe-9899-71c71aee43e0">
+            Id="c96b3898-7dcf-4a9d-932c-b39474c9e2e3">
             <interfaceMoniker
               Id="e28f81de-dea8-4cfb-91c4-85788a2cad13"
               LastKnownName="Visitor"
@@ -835,7 +903,7 @@ und exception handling machen</body>
         </suppliersInternal>
         <generalsInternal>
           <generalization
-            Id="19d48eae-7e7e-432e-ab0a-dac33024f910"
+            Id="ac0e3e23-2178-47b1-96eb-45e079288486"
             isSubstitutable="false">
             <classMoniker
               Id="17dbfbdd-8819-41a1-81c7-44ec1e15dc6c"
@@ -847,6 +915,7 @@ und exception handling machen</body>
           <property
             Id="b4e01233-3dc3-4d2b-b110-305d9a531751"
             name="mResults"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -865,6 +934,7 @@ und exception handling machen</body>
           <property
             Id="0b9af389-4dae-4820-ab87-6b9c56abba58"
             name="mName"
+            visibility="Private"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -1017,6 +1087,14 @@ und exception handling machen</body>
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="d83d92b9-0cbf-4ede-84c1-bec63c965b17"
+            name="~Visitor"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -1029,7 +1107,7 @@ und exception handling machen</body>
         isActiveClass="false">
         <suppliersInternal>
           <interfaceRealization
-            Id="226fa6b5-e4c4-41b4-8aac-25acfe8eea14">
+            Id="3e8ed7d4-a34c-4778-b8bf-9ae1ace43772">
             <interfaceMoniker
               Id="e28f81de-dea8-4cfb-91c4-85788a2cad13"
               LastKnownName="Visitor"
@@ -1046,6 +1124,27 @@ und exception handling machen</body>
               LastKnownLocation="ClassDiagram.uml" />
           </generalization>
         </generalsInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="d315d622-39dc-4425-b627-12dcb5aed186"
+            name="mCounter"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="eb8a402a-a717-45b2-829f-f0cc8905b7e9"
+                LastKnownName="int"
+                LastKnownLocation="ClassDiagram.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
             Id="1f817e88-d1fd-4609-b66d-78fe86ac1414"
@@ -1140,6 +1239,86 @@ und exception handling machen</body>
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="4e39575a-6502-4dc8-9ed1-476b626f16ad"
+            name="PlayVisitor"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="3c321a42-7e6c-456b-9a3c-5033bd7144df"
+            name="GetMinutes"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="6193f5d9-e356-4f15-9a29-eb9cbb459126"
+                  name="size_t"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c9650748-14b3-414b-ae7f-e0ccd2891026"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="eb8a402a-a717-45b2-829f-f0cc8905b7e9"
+                      LastKnownName="int"
+                      LastKnownLocation="ClassDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="86cb47b6-8267-4757-8435-44adc8fa6ca7"
+            name="GetSeconds"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0ae5491e-a9e8-40de-8709-ee401763fe68"
+                  name="size_t"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c90a2df9-a81c-46e7-bfee-427ca9511582"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="eb8a402a-a717-45b2-829f-f0cc8905b7e9"
+                      LastKnownName="int"
+                      LastKnownLocation="ClassDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="a48c0b5e-6c6c-4195-b481-95e2d649d270"
+            name="~Visitor"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -1152,7 +1331,7 @@ und exception handling machen</body>
         isActiveClass="false">
         <suppliersInternal>
           <interfaceRealization
-            Id="10744d86-239f-4509-a2b0-255a763d00cd">
+            Id="3e4ee022-d6a9-473c-9524-2e054f95c937">
             <interfaceMoniker
               Id="e28f81de-dea8-4cfb-91c4-85788a2cad13"
               LastKnownName="Visitor"
@@ -1316,6 +1495,14 @@ und exception handling machen</body>
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false" />
+          <operation
+            Id="33280bff-6401-4f53-b330-b8901e1f0763"
+            name="~Visitor"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -1328,28 +1515,32 @@ und exception handling machen</body>
         isActiveClass="false">
         <suppliersInternal>
           <dependency
-            Id="dc35f6ad-0b15-4588-a2ec-dd83607d75d7">
+            Id="dc35f6ad-0b15-4588-a2ec-dd83607d75d7"
+            name="&lt;&lt;use&gt;&gt;">
             <enumerationMoniker
               Id="26b60824-ceee-4fec-9465-970939b86007"
-              LastKnownName="MusicKind"
+              LastKnownName="TMusicKind"
               LastKnownLocation="ClassDiagram.uml" />
           </dependency>
           <dependency
-            Id="1f58c35a-35e1-4b15-8a6a-7917628f5472">
+            Id="1f58c35a-35e1-4b15-8a6a-7917628f5472"
+            name="&lt;&lt;creates&gt;&gt;">
             <classMoniker
               Id="c77ce9bf-716d-4171-a84c-20e43fb47ace"
               LastKnownName="Song"
               LastKnownLocation="ClassDiagram.uml" />
           </dependency>
           <dependency
-            Id="e17b09e5-896e-4269-a64f-6b5c32e84ba8">
+            Id="e17b09e5-896e-4269-a64f-6b5c32e84ba8"
+            name="&lt;&lt;creates&gt;&gt;">
             <classMoniker
               Id="1d7692b3-693b-4a7b-8ab8-427bf2e98b44"
               LastKnownName="Album"
               LastKnownLocation="ClassDiagram.uml" />
           </dependency>
           <dependency
-            Id="bbbf43f3-0640-4e58-9ef0-2c3c82f79935">
+            Id="bbbf43f3-0640-4e58-9ef0-2c3c82f79935"
+            name="&lt;&lt;creates&gt;&gt;">
             <classMoniker
               Id="84c9deef-1622-4e6a-b2a2-04f25f3d911e"
               LastKnownName="MusicCollection"
@@ -1442,7 +1633,7 @@ und exception handling machen</body>
         <ownedOperationsInternal>
           <operation
             Id="73869abc-0ec0-4556-bfa8-9f4f1b3134c2"
-            name="CreateMusicComponent"
+            name="CreateMusicCollection"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -1451,7 +1642,14 @@ und exception handling machen</body>
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="fe6bab67-bff8-468a-9f5b-b2a0952046c5"
+                  Id="3672ec51-2594-434d-9d1a-ab7e1901398f"
+                  name="string"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="42c86958-55e7-4322-8882-18abfc9eac27"
                   direction="Return"
                   isUnique="false">
                   <type_NamedElement>
@@ -1461,13 +1659,6 @@ und exception handling machen</body>
                       LastKnownLocation="ClassDiagram.uml" />
                   </type_NamedElement>
                 </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="99fd32fa-548a-457b-8824-96b0e5c385e3"
-                  name="MusicKind&amp;"
-                  direction="In"
-                  isUnique="false" />
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
@@ -1480,6 +1671,96 @@ und exception handling machen</body>
             isAbstract="false"
             concurrency="Sequential"
             isQuery="false" />
+          <operation
+            Id="446d0621-61b6-4987-9263-37e2ee22b662"
+            name="CreateAlbum"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="64e5e90b-09e3-420b-8fe3-5c0700d18ae3"
+                  name="string"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e988fe44-c62a-4d62-9bf5-db812ba7895d"
+                  name="string"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5b78ccea-9749-46c3-b8c5-7cb27e4e5bd1"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="3267e9a4-1887-48e4-b908-2938f2db90ad"
+                      LastKnownName="MusicComponent*"
+                      LastKnownLocation="ClassDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="b606fd82-32e1-4b13-976f-43b823a9bfee"
+            name="+ CreateSong"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="bf6cc05a-48df-4681-b56c-17711888b415"
+                  name="string"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="34f5279b-cadd-4539-8854-1c42b9a4810a"
+                  name="string"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5216a8ef-88c9-4160-b351-415f498864c8"
+                  name="string"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b1d6ce03-4a9b-4c9b-8839-0223ed4a2c98"
+                  name="size_t"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c814ef65-1e20-4c24-a4ca-e52bb1d163c2"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="3267e9a4-1887-48e4-b908-2938f2db90ad"
+                      LastKnownName="MusicComponent*"
+                      LastKnownLocation="ClassDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
@@ -1492,7 +1773,7 @@ und exception handling machen</body>
         isActiveClass="false">
         <generalsInternal>
           <generalization
-            Id="d7554ae2-f023-4ad7-8804-7fa5549cdc74"
+            Id="e57f7d4c-2634-4733-a435-3d2f901b42f7"
             isSubstitutable="false">
             <classMoniker
               Id="31c338b7-1743-4367-8b94-3a4deabc0f14"
@@ -1585,25 +1866,6 @@ und exception handling machen</body>
                 LastKnownLocation="ClassDiagram.uml" />
             </type_NamedElement>
           </property>
-          <property
-            Id="539b39ca-fdb0-48a4-8bf0-46217e05c308"
-            name="mTmpVisitor"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="7665dbe2-6f39-4699-8811-8ea9e68b9716"
-                LastKnownName="Visitor*"
-                LastKnownLocation="ClassDiagram.uml" />
-            </type_NamedElement>
-          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
@@ -1659,6 +1921,13 @@ und exception handling machen</body>
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e11f9cf0-f86a-40ef-9198-6b447afd559e"
+                  name="Visitor*"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
           <operation
@@ -1686,8 +1955,8 @@ und exception handling machen</body>
             </ownedParameters>
           </operation>
           <operation
-            Id="25e4b2e4-3b54-4e67-9a3a-5b4413de22aa"
-            name="GetName"
+            Id="694f6f05-5504-4717-a494-4d15b1cf0e36"
+            name="MusicCollection"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -1696,13 +1965,86 @@ und exception handling machen</body>
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="340479ee-2f47-4ccb-944d-44ae0a188e1d"
+                  Id="c6b534bc-0181-4376-ac31-9f31bbd5d69f"
+                  name="string"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="bf6d86af-85a3-41bf-a55c-f6e9ea09b648"
+            name="GetNumberOfEntries"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="10f13028-4068-416c-b11c-874ffd2063e1"
                   direction="Return"
                   isUnique="false">
                   <type_NamedElement>
                     <undefinedTypeMoniker
-                      Id="9fb33c96-1839-4b55-8f2c-b7985ebd079d"
-                      LastKnownName="string"
+                      Id="fc072574-994f-425d-8b38-15bec4e4605e"
+                      LastKnownName="size_t"
+                      LastKnownLocation="ClassDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="3262a7fa-02f2-4b3b-8ad6-dee22794b87d"
+            name="GetType"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c06a695d-5715-4200-8b7d-07f901510888"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <enumerationMoniker
+                      Id="26b60824-ceee-4fec-9465-970939b86007"
+                      LastKnownName="TMusicKind"
+                      LastKnownLocation="ClassDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="65b876a5-c23b-4efd-ac81-c6ac88b7711e"
+            name="AddMusic"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="185d32bc-901f-4487-b023-dc42c8e74961"
+                  name="MusicComponent*"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="393314c6-6a54-4ddb-9112-e67ddcabff40"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="d2af1752-19d4-4620-afba-142f60fa5795"
+                      LastKnownName="void"
                       LastKnownLocation="ClassDiagram.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -1749,6 +2091,25 @@ und exception handling machen</body>
                 LastKnownLocation="ClassDiagram.uml" />
             </type_NamedElement>
           </property>
+          <property
+            Id="699531b1-abe4-4bca-a386-bb3f098dbd7b"
+            name="mType"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <enumerationMoniker
+                Id="26b60824-ceee-4fec-9465-970939b86007"
+                LastKnownName="TMusicKind"
+                LastKnownLocation="ClassDiagram.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
@@ -1783,35 +2144,11 @@ und exception handling machen</body>
             </ownedParameters>
           </operation>
           <operation
-            Id="c38de2fa-b01e-4314-b821-432de40933cb"
-            name="Play"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false">
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="2d85779e-23d0-4047-a9e6-e9cb717ddbd5"
-                  direction="Return"
-                  isUnique="false">
-                  <type_NamedElement>
-                    <undefinedTypeMoniker
-                      Id="d2af1752-19d4-4620-afba-142f60fa5795"
-                      LastKnownName="void"
-                      LastKnownLocation="ClassDiagram.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-          <operation
             Id="93ead4fa-7891-4369-994d-bd27d5dcfb49"
             name="GetName"
             isLeaf="false"
             isStatic="false"
-            isAbstract="true"
+            isAbstract="false"
             concurrency="Sequential"
             isQuery="false">
             <ownedParameters>
@@ -1827,6 +2164,80 @@ und exception handling machen</body>
                       LastKnownLocation="ClassDiagram.uml" />
                   </type_NamedElement>
                 </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="f6d18d0c-d676-4f18-80be-e3c212713b6c"
+            name="GetType"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="8b0a36fa-f5f2-47d8-95db-525e6a59c00e"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <enumerationMoniker
+                      Id="26b60824-ceee-4fec-9465-970939b86007"
+                      LastKnownName="TMusicKind"
+                      LastKnownLocation="ClassDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="a8d2c7ee-1334-4868-8642-47d04a54a42f"
+            name="GetNumberOfEntries"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="39e0e946-8a3d-40df-b558-2d9ada9110d0"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="fc072574-994f-425d-8b38-15bec4e4605e"
+                      LastKnownName="size_t"
+                      LastKnownLocation="ClassDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="5a6304d8-7b2c-4fb7-adf8-c9029050a485"
+            name="~ MusicComponent"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="86e2ad76-bd13-4c0a-9666-5193c4c3723e"
+            name="AddMusic"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="03e2cb60-a842-449b-8089-ec156ba7d701"
+                  name="MusicComponent*"
+                  direction="In"
+                  isUnique="false" />
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
@@ -1967,19 +2378,19 @@ und exception handling machen</body>
     <packageHasNamedElement>
       <enumeration
         Id="26b60824-ceee-4fec-9465-970939b86007"
-        name="MusicKind"
+        name="TMusicKind"
         isAbstract="false"
         isLeaf="false">
         <ownedLiterals>
           <enumerationLiteral
             Id="8a176cda-3d42-457b-8078-e9336937d286"
-            name="Song" />
+            name="TSong" />
           <enumerationLiteral
             Id="c8edfa57-bf71-43eb-880f-8b2925e9880f"
-            name="Album" />
+            name="TAlbum" />
           <enumerationLiteral
             Id="096e5a39-53fa-419a-b02c-8823d4f6b0cb"
-            name="MusicCollection" />
+            name="TMusicCollection" />
         </ownedLiterals>
       </enumeration>
     </packageHasNamedElement>
@@ -2039,6 +2450,16 @@ und exception handling machen</body>
       <undefinedType
         Id="88c9c83d-54ca-4c12-89e1-29bf02f0bf11"
         name="string const" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="f6041822-9680-42e2-8e39-7dbb362bc4dc"
+        name="string(" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="eb8a402a-a717-45b2-829f-f0cc8905b7e9"
+        name="int" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
