@@ -5,14 +5,37 @@
 // Description : Implementation of class MusicFactory
 ///////////////////////////////////////////////////////////////////////////
 
+#include <algorithm>
 #include "MusicFactory.h"
+#include "MusicCollection.h"
+#include "Album.h"
+#include "Song.h"
 
 MusicFactory::~MusicFactory()
 {
-
+	std::for_each(mMusicComponents.begin(),mMusicComponents.end(),[=](MusicComponent* m)
+	{
+		delete m;
+	});
 }
 
-MusicComponent* MusicFactory::CreateMusicComponent(TMusicKind& kind)
+MusicComponent* MusicFactory::CreateMusicCollection(std::string Name)
 {
-	return 0;
+	MusicComponent* m = new MusicCollection(Name);
+	mMusicComponents.push_back(m);
+	return m;
+}
+
+MusicComponent* MusicFactory::CreateAlbum(std::string Name, std::string Interpret)
+{
+	MusicComponent* m = new Album(Name,Interpret);
+	mMusicComponents.push_back(m);
+	return m;
+}
+
+MusicComponent* MusicFactory::CreateSong(std::string Name, std::string Album, std::string Interpret, size_t time)
+{
+	MusicComponent* m = new Song(Name,Album,Interpret,time);
+	mMusicComponents.push_back(m);
+	return m;
 }

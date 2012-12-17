@@ -13,14 +13,13 @@
 //CTor
 MusicCollection::MusicCollection(std::string Name)
 {
-
+	mName = Name;
+	mType = TMusicCollection;
 }
 
 //virtual Destructor
 MusicCollection::~MusicCollection()
-{
-
-}
+{}
 
 void MusicCollection::Accept(Visitor* visitor)
 {
@@ -36,7 +35,7 @@ void MusicCollection::Accept(Visitor* visitor)
 	}
 	catch (std::string const& error)
 	{
-		std::cout << "Error in MusicCollection::Accept: " << error << std::endl;
+		std::cerr << "Error in MusicCollection::Accept: " << error << std::endl;
 	}
 }
 
@@ -64,6 +63,28 @@ void MusicCollection::GetTime()
 	}
 	catch (std::string const& error)
 	{
-		std::cout << "Error in Album::GetTime: " << error << std::endl;
+		std::cerr << "Error in Album::GetTime: " << error << std::endl;
+	}
+}
+
+TMusicKind MusicCollection::GetType()
+{
+	return mType;
+}
+
+void MusicCollection::AddMusic(MusicComponent* m)
+{
+	try
+	{
+		if(m == 0)
+		{
+			std::string error = "no valid pointer";
+			throw (error); 
+		}
+		mMusicComponents.push_back(m);
+	}
+	catch (std::string const& error)
+	{
+		std::cerr << "Error in MusicCollection::AddMusic: " << error << std::endl;
 	}
 }

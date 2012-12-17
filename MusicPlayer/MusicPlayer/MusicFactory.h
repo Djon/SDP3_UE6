@@ -19,7 +19,9 @@ public:
 	//virtual Destructor
 	virtual ~MusicFactory();
 
-	MusicComponent* CreateMusicComponent(TMusicKind& kind); 
+	MusicComponent* CreateMusicCollection(std::string Name);
+	MusicComponent* CreateAlbum(std::string Name, std::string Interpret);
+	MusicComponent* CreateSong(std::string Name, std::string Album, std::string Interpret, size_t time);
 
 private:
 	MusicList mMusicComponents;

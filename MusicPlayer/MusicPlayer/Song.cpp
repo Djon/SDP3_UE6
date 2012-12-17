@@ -14,6 +14,7 @@ Song::Song(std::string Name, std::string Album, std::string Interpret, size_t ti
 	: mAlbum(Album),mInterpret(Interpret),mTime(time)
 {
 	mName = Name;
+	mType = TSong;
 }
 
 //virtual Destructor
@@ -33,7 +34,7 @@ void Song::Accept(Visitor* visitor)
 	}
 	catch (std::string const& error)
 	{
-		std::cout << "Error in Song::Accept: " << error << std::endl;
+		std::cerr << "Error in Song::Accept: " << error << std::endl;
 	}
 }
 
@@ -45,4 +46,15 @@ void Song::Play()
 size_t Song::GetTime()
 {
 	return mTime;
+}
+
+std::string Song::GetInterpret()
+{
+	return mInterpret;
+}
+
+void Song::AddMusic(MusicComponent* m)
+{
+	std::string error = "This functions is not implemented and should not be used";
+	std::cerr << "Error in Song::AddMusic: " << error << std::endl;
 }

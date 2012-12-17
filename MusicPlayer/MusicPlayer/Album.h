@@ -11,8 +11,6 @@
 #include "MusicComponent.h"
 #include "Song.h"
 
-typedef std::list<Song*> SongList;
-
 class Album : 
 	public MusicComponent
 {
@@ -26,13 +24,17 @@ public:
 	virtual void Accept(Visitor* visitor);	
 	virtual void Play();
 
+	virtual TMusicKind GetType();
 	void GetTime();
+	std::string GetInterpret();
+
+	virtual void AddMusic(MusicComponent* m);
 
 private:
 	std::string mInterpret;
 
 	Visitor* tmpVisitor;
-	SongList mSongs;
+	MusicList mSongs;
 };
 
 #endif

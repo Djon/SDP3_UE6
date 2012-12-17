@@ -11,7 +11,7 @@
 #include <list>
 #include <string>
 #include "Object.h"
-//#include "Visitor.h"
+#include "TMusicKind.h"
 
 class Visitor;
 
@@ -25,9 +25,13 @@ public:
 	virtual void Accept(Visitor* visitor) = 0;	
 	virtual void Play() = 0;
 
-	std::string GetName(); 
+	virtual TMusicKind GetType() = 0;
+	std::string GetName();
+
+	virtual void AddMusic(MusicComponent* m) = 0;
 protected:
 	std::string mName;
+	TMusicKind mType;
 };
 
 typedef std::list<MusicComponent*> MusicList;

@@ -15,13 +15,12 @@ Album::Album(std::string Name, std::string Interpret)
 	: mInterpret(Interpret)
 {
 	mName = Name;
+	mType = TAlbum;
 }
 
 //virtual Destructor
 Album::~Album()
-{
-
-}
+{}
 
 void Album::Accept(Visitor* visitor)
 {
@@ -37,14 +36,12 @@ void Album::Accept(Visitor* visitor)
 	}
 	catch (std::string const& error)
 	{
-		std::cout << "Error in Album::Accept: " << error << std::endl;
+		std::cerr << "Error in Album::Accept: " << error << std::endl;
 	}
 }
 
 void Album::Play()
-{
-
-}
+{}
 
 void Album::GetTime()
 {
@@ -55,7 +52,7 @@ void Album::GetTime()
 			std::string error = "no valid visitor";
 			throw (error); 
 		}
-		std::for_each(mSongs.begin(),mSongs.end(),[=](Song* s)
+		std::for_each(mSongs.begin(),mSongs.end(),[=](MusicComponent* s)
 		{
 			s->Accept(tmpVisitor);
 		});
@@ -65,6 +62,33 @@ void Album::GetTime()
 	}
 	catch (std::string const& error)
 	{
-		std::cout << "Error in Album::GetTime: " << error << std::endl;
+		std::cerr << "Error in Album::GetTime: " << error << std::endl;
 	}
+}
+
+void Album::AddMusic(MusicComponent* m)
+{
+	try
+	{
+		if(m == 0)
+		{
+			std::string error = "no valid pointer";
+			throw (error); 
+		}
+		if(m->GetType() != TSong)
+		{
+			std::string error = "Tried to add a wrong object type to the song list";
+			throw (error); 
+		}
+		mSongs.push_back(m);
+	}
+	catch (std::string const& error)
+	{
+		std::cerr << "Error in Album::AddMusic: " << error << std::endl;
+	}
+}
+
+std::string Album::GetInterpret()
+{
+	return mInterpret;
 }

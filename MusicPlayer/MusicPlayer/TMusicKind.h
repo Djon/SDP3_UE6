@@ -10,9 +10,9 @@
 
 enum TMusicKind
 {
-	MusicCollection,
-	Album,
-	Song
+	TMusicCollection,
+	TAlbum,
+	TSong
 };
 
 #endif

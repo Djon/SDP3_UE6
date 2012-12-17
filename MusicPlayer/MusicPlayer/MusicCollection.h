@@ -23,8 +23,10 @@ public:
 	virtual void Accept(Visitor* visitor);	
 	virtual void Play();
 
+	virtual TMusicKind GetType();
 	void GetTime();
 
+	virtual void AddMusic(MusicComponent* m);
 private:
 	Visitor* tmpVisitor;
 	MusicList mMusicComponents;

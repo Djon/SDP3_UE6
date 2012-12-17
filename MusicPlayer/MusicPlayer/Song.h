@@ -23,8 +23,12 @@ public:
 	virtual void Accept(Visitor* visitor);	
 	virtual void Play();
 
+	virtual TMusicKind GetType();
 	size_t GetTime();
+	std::string GetInterpret();
+	std::string GetAlbum();
 
+	virtual void AddMusic(MusicComponent* m);
 private:
 	std::string mAlbum;
 	std::string mInterpret;
