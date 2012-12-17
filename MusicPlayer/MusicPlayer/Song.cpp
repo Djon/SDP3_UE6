@@ -36,6 +36,10 @@ void Song::Accept(Visitor* visitor)
 	{
 		std::cerr << "Error in Song::Accept: " << error << std::endl;
 	}
+	catch(...)
+	{
+		std::cerr << "Song::Accept: Unknown Exception occured" << std::endl;
+	}
 }
 
 size_t Song::GetTime()
@@ -59,7 +63,7 @@ TMusicKind Song::GetType()
 	return mType;
 }
 
-size_t GetNumberOfEntries()
+size_t Song::GetNumberOfEntries()
 {
 	return 1;
 }

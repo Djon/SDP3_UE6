@@ -35,11 +35,16 @@ void PlayVisitor::Visit(Song* song)
 			throw (error); 
 		}
 		mCounter++;
-		std::cout << mCounter << ". " << song->GetName() << " << " << GetMinutes(song->GetTime()) << ":" << GetSeconds(song->GetTime()) << " << " << song->GetInterpret() << std::endl;
+		std::cout << mCounter << ". " << song->GetName() << " << " << GetMinutes(song->GetTime()) << ":" 
+			<< GetSeconds(song->GetTime()) << " << " << song->GetInterpret() << std::endl;
 	}
 	catch (std::string const& error)
 	{
-		std::cout << "error in PlayVisitor::Visit(Song*): " << error << std::endl;
+		std::cerr << "error in PlayVisitor::Visit(Song*): " << error << std::endl;
+	}
+	catch(...)
+	{
+		std::cerr << "PlayVisitor::Visit: Unknown Exception occured" << std::endl;
 	}
 }
 
@@ -58,14 +63,23 @@ void PlayVisitor::Visit(Album* album)
 		album->Accept(timeVisitor);
 		timeVisitor->GetTime();
 		
-		std::cout << "Album: " << album->GetName() << "(" << album->GetNumberOfEntries() << " Songs)" << GetMinutes(timeVisitor->GetTime()) << ":" << GetSeconds(timeVisitor->GetTime()) << std::endl;
-		album->Play(this);
+		std::cout << "Album: " << album->GetName() << "(" << album->GetNumberOfEntries() << " Songs)" 
+			<< GetMinutes(timeVisitor->GetTime()) << ":" << GetSeconds(timeVisitor->GetTime()) << std::endl;
+		album->ForwardVisitor(this);
 
 		delete timeVisitor; timeVisitor = 0;
 	}
+	catch (std::bad_alloc const& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
 	catch (std::string const& error)
 	{
-		std::cout << "error in PlayVisitor::Visit(Album*): " << error << std::endl;
+		std::cerr << "error in PlayVisitor::Visit(Album*): " << error << std::endl;
+	}
+	catch(...)
+	{
+		std::cerr << "PlayVisitor::Visit: Unknown Exception occured" << std::endl;
 	}
 }
 
@@ -84,13 +98,22 @@ void PlayVisitor::Visit(MusicCollection* musicCollection)
 		musicCollection->Accept(timeVisitor);
 		timeVisitor->GetTime();
 
-		std::cout << "Collection: " << musicCollection->GetName() << "(" << musicCollection->GetNumberOfEntries() << " Songs)" << GetMinutes(timeVisitor->GetTime()) << ":" << GetSeconds(timeVisitor->GetTime()) << std::endl;
-		musicCollection->Play(this);
+		std::cout << "Collection: " << musicCollection->GetName() << "(" << musicCollection->GetNumberOfEntries() 
+			<< " Songs)" << GetMinutes(timeVisitor->GetTime()) << ":" << GetSeconds(timeVisitor->GetTime()) << std::endl;
+		musicCollection->ForwardVisitor(this);
 
 		delete timeVisitor; timeVisitor = 0;
 	}
+	catch (std::bad_alloc const& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
 	catch (std::string const& error)
 	{
-		std::cout << "error in PlayVisitor::Visit(MusicCollection*): " << error << std::endl;
+		std::cerr << "error in PlayVisitor::Visit(MusicCollection*): " << error << std::endl;
+	}
+	catch(...)
+	{
+		std::cerr << "PlayVisitor::Visit: Unknown Exception occured" << std::endl;
 	}
 }

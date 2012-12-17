@@ -16,8 +16,6 @@
 #include "Album.h"
 #include "MusicCollection.h"
 
-typedef std::list<MusicComponent*> TMusicComponents;
-
 class SearchVisitor :
 	public Visitor,
 	public Object

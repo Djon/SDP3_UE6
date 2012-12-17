@@ -36,9 +36,13 @@ void MusicCollection::Accept(Visitor* visitor)
 	{
 		std::cerr << "Error in MusicCollection::Accept: " << error << std::endl;
 	}
+	catch(...)
+	{
+		std::cerr << "MusicCollection::Accept: Unknown Exception occured" << std::endl;
+	}
 }
 
-void MusicCollection::Play(Visitor* visitor)
+void MusicCollection::ForwardVisitor(Visitor* visitor)
 {
 	try
 	{
@@ -54,27 +58,11 @@ void MusicCollection::Play(Visitor* visitor)
 	}
 	catch (std::string const& error)
 	{
-		std::cerr << "Error in MusicCollection::Play: " << error << std::endl;
+		std::cerr << "Error in MusicCollection::ForwardVisitor: " << error << std::endl;
 	}
-}
-
-void MusicCollection::GetTime(Visitor* visitor)
-{
-	try
+	catch(...)
 	{
-		if(visitor == 0)
-		{
-			std::string error = "no valid visitor";
-			throw (error); 
-		}
-		std::for_each(mMusicComponents.begin(),mMusicComponents.end(),[=](MusicComponent* m)
-		{
-			m->Accept(visitor);
-		});
-	}
-	catch (std::string const& error)
-	{
-		std::cerr << "Error in MusicCollection::GetTime: " << error << std::endl;
+		std::cerr << "MusicCollection::ForwardVisitor: Unknown Exception occured" << std::endl;
 	}
 }
 
@@ -87,7 +75,8 @@ void MusicCollection::AddMusic(MusicComponent* m)
 {
 	try
 	{
-		if(m == 0)
+		//check for Null pointer and this pointer
+		if(m == 0 || m == this)
 		{
 			std::string error = "no valid pointer";
 			throw (error); 
@@ -97,6 +86,10 @@ void MusicCollection::AddMusic(MusicComponent* m)
 	catch (std::string const& error)
 	{
 		std::cerr << "Error in MusicCollection::AddMusic: " << error << std::endl;
+	}
+	catch(...)
+	{
+		std::cerr << "MusicCollection::AddMusic: Unknown Exception occured" << std::endl;
 	}
 }
 

@@ -24,7 +24,7 @@ public:
 	MusicComponent* CreateSong(std::string Name, std::string Album, std::string Interpret, size_t time);
 
 private:
-	MusicList mMusicComponents;
+	TMusicComponents mMusicComponents;
 };
 
 #endif

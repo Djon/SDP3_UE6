@@ -22,7 +22,11 @@ void TimeVisitor::Visit(Song* song)
 	}
 	catch (std::string const& error)
 	{
-		std::cout << "error in TimeVisitor::Visit(Song*): " << error << std::endl;
+		std::cerr << "error in TimeVisitor::Visit(Song*): " << error << std::endl;
+	}
+	catch(...)
+	{
+		std::cerr << "TimeVisitor::Visit: Unknown Exception occured" << std::endl;
 	}
 }
 
@@ -35,11 +39,15 @@ void TimeVisitor::Visit(Album* album)
 			std::string error = "no valid pointer";
 			throw (error); 
 		}
-		album->GetTime(this);
+		album->ForwardVisitor(this);
 	}
 	catch (std::string const& error)
 	{
-		std::cout << "error in TimeVisitor::Visit(Album*): " << error << std::endl;
+		std::cerr << "error in TimeVisitor::Visit(Album*): " << error << std::endl;
+	}
+	catch(...)
+	{
+		std::cerr << "TimeVisitor::Visit: Unknown Exception occured" << std::endl;
 	}
 }
 
@@ -52,11 +60,15 @@ void TimeVisitor::Visit(MusicCollection* musicCollection)
 			std::string error = "no valid pointer";
 			throw (error); 
 		}
-		musicCollection->GetTime(this);
+		musicCollection->ForwardVisitor(this);
 	}
 	catch (std::string const& error)
 	{
-		std::cout << "error in TimeVisitor::Visit(MusicCollection*): " << error << std::endl;
+		std::cerr << "error in TimeVisitor::Visit(MusicCollection*): " << error << std::endl;
+	}
+	catch(...)
+	{
+		std::cerr << "TimeVisitor::Visit: Unknown Exception occured" << std::endl;
 	}
 }
 

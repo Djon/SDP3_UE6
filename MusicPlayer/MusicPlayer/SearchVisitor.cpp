@@ -21,7 +21,11 @@ SearchVisitor::SearchVisitor(std::string const& name)
 	}
 	catch (std::string const& error)
 	{
-		std::cout << "error in SearchVisitor::SearchVisitor: " << error << std::endl;
+		std::cerr << "error in SearchVisitor::SearchVisitor: " << error << std::endl;
+	}
+	catch(...)
+	{
+		std::cerr << "SearchVisitor::Visit: Unknown Exception occured" << std::endl;
 	}
 }
 
@@ -42,7 +46,11 @@ void SearchVisitor::Visit(Song* song)
 	}
 	catch (std::string const& error)
 	{
-		std::cout << "error in SearchVisitor::Visit(Song*): " << error << std::endl;
+		std::cerr << "error in SearchVisitor::Visit(Song*): " << error << std::endl;
+	}
+	catch(...)
+	{
+		std::cerr << "SearchVisitor::Visit: Unknown Exception occured" << std::endl;
 	}
 }
 
@@ -60,10 +68,15 @@ void SearchVisitor::Visit(Album* album)
 		{
 			mResults.push_back(album);
 		}
+		album->ForwardVisitor(this);
 	}
 	catch (std::string const& error)
 	{
-		std::cout << "error in SearchVisitor::Visit(Album*): " << error << std::endl;
+		std::cerr << "error in SearchVisitor::Visit(Album*): " << error << std::endl;
+	}
+	catch(...)
+	{
+		std::cerr << "SearchVisitor::Visit: Unknown Exception occured" << std::endl;
 	}
 }
 
@@ -81,10 +94,15 @@ void SearchVisitor::Visit(MusicCollection* musicCollection)
 		{
 			mResults.push_back(musicCollection);
 		}
+		musicCollection->ForwardVisitor(this);
 	}
 	catch (std::string const& error)
 	{
-		std::cout << "error in SearchVisitor::Visit(MusicCollection*): " << error << std::endl;
+		std::cerr << "error in SearchVisitor::Visit(MusicCollection*): " << error << std::endl;
+	}
+	catch(...)
+	{
+		std::cerr << "SearchVisitor::Visit: Unknown Exception occured" << std::endl;
 	}
 }
 

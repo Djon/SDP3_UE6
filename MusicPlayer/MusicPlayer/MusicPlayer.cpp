@@ -26,7 +26,11 @@ void MusicPlayer::Add(MusicComponent* musicComponent)
 	}
 	catch (std::string const& error)
 	{
-		std::cout << "error in MusicPlayer::Add(): " << error << std::endl;
+		std::cerr << "error in MusicPlayer::Add(): " << error << std::endl;
+	}
+	catch(...)
+	{
+		std::cerr << "MusicPlayer::Add: Unknown Exception occured" << std::endl;
 	}
 }
 
@@ -39,18 +43,17 @@ size_t MusicPlayer::GetTime(MusicComponent * const musicComponent)
 			std::string error = "no valid pointer";
 			throw (error); 
 		}
-		
+
 		//check if element is in list
 		bool exists = false;
-		TMusicComponentsItor itor = mMusicComponents.begin();
-		
-		for(; itor != mMusicComponents.end(); ++itor)
+
+		std::for_each(mMusicComponents.begin(),mMusicComponents.end(),[=,&exists](MusicComponent* m)
 		{
-			if(*itor == musicComponent)
+			if(m == musicComponent)
 			{
 				exists = true;
 			}
-		}
+		});
 		if(!exists)
 		{
 			std::string error = "component doesnt exist in list";
@@ -61,18 +64,24 @@ size_t MusicPlayer::GetTime(MusicComponent * const musicComponent)
 		musicComponent->Accept(timeVisitor);
 		size_t tmp = timeVisitor->GetTime();
 		delete timeVisitor;
-		
+
 		return tmp;
+	}
+	catch (std::bad_alloc const& e)
+	{
+		std::cerr << e.what() << std::endl;
+		return 0;
 	}
 	catch (std::string const& error)
 	{
 		std::cout << "error in MusicPlayer::GetTime(): " << error << std::endl;
+		return 0;
 	}
-	catch (std::bad_alloc const& e)
+	catch(...)
 	{
-		std::cout << e.what() << std::endl;
+		std::cerr << "MusicPlayer::GetTime: Unknown Exception occured" << std::endl;
+		return 0;
 	}
-	return 0;
 }
 
 size_t MusicPlayer::GetTotalTime()
@@ -80,12 +89,11 @@ size_t MusicPlayer::GetTotalTime()
 	try
 	{
 		TimeVisitor* timeVisitor = new TimeVisitor;
-		
-		TMusicComponentsItor itor = mMusicComponents.begin();
-		for(; itor != mMusicComponents.end(); ++itor)
+
+		std::for_each(mMusicComponents.begin(),mMusicComponents.end(),[=](MusicComponent* m)
 		{
-			(*itor)->Accept(timeVisitor);
-		}
+			m->Accept(timeVisitor);
+		});
 
 		size_t tmp = timeVisitor->GetTime();
 		delete timeVisitor;
@@ -93,9 +101,14 @@ size_t MusicPlayer::GetTotalTime()
 	}
 	catch (std::bad_alloc const& e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
+		return 0;
 	}
-	return 0;
+	catch(...)
+	{
+		std::cerr << "MusicPlayer::GetTotalTime: Unknown Exception occured" << std::endl;
+		return 0;
+	}
 }
 
 void MusicPlayer::Play()
@@ -104,17 +117,20 @@ void MusicPlayer::Play()
 	{
 		PlayVisitor* playVisitor = new PlayVisitor;
 
-		TMusicComponentsItor itor = mMusicComponents.begin();
-		for(; itor != mMusicComponents.end(); ++itor)
+		std::for_each(mMusicComponents.begin(),mMusicComponents.end(),[=](MusicComponent* m)
 		{
-			(*itor)->Accept(playVisitor);
-		}
+			m->Accept(playVisitor);
+		});
 
 		delete playVisitor; playVisitor = 0;
 	}
 	catch (std::bad_alloc const& e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cerr << e.what() << std::endl;
+	}
+	catch(...)
+	{
+		std::cerr << "MusicPlayer::Play: Unknown Exception occured" << std::endl;
 	}
 }
 
@@ -131,7 +147,11 @@ void MusicPlayer::Remove(MusicComponent * const musicComponent)
 	}
 	catch (std::string const& error)
 	{
-		std::cout << "error in MusicPlayer::Remove(): " << error << std::endl;
+		std::cerr << "error in MusicPlayer::Remove(): " << error << std::endl;
+	}
+	catch(...)
+	{
+		std::cerr << "MusicPlayer::Remove: Unknown Exception occured" << std::endl;
 	}
 }
 
@@ -146,28 +166,34 @@ void MusicPlayer::Search(std::string const& name)
 		}
 
 		std::cout << "found medias: (search for \"" << name << "\")" << std::endl;
-		
+
 		SearchVisitor* searchVisitor = new SearchVisitor(name);
 
-		TMusicComponentsItor itor = mMusicComponents.begin();
-		for(; itor != mMusicComponents.end(); ++itor)
+		std::for_each(mMusicComponents.begin(),mMusicComponents.end(),[=](MusicComponent* m)
 		{
-			(*itor)->Accept(searchVisitor);
-		}
-		
+			m->Accept(searchVisitor);
+		});
+
 		TMusicComponents* tmp;
 		tmp = searchVisitor->GetResults();
-		
-		itor = tmp->begin();
-		for(; itor != tmp->end(); ++itor)
+
+		std::for_each(tmp->begin(),tmp->end(),[=](MusicComponent* m)
 		{
-			std::cout << (*itor)->GetName() << std::endl;
-		}
-		
+			std::cout << m->GetName() << std::endl;
+		});
+
 		delete searchVisitor; searchVisitor = 0;
+	}
+	catch (std::bad_alloc const& e)
+	{
+		std::cerr << e.what() << std::endl;
 	}
 	catch (std::string const& error)
 	{
-		std::cout << "error in MusicPlayer::Search(): " << error << std::endl;
+		std::cerr << "error in MusicPlayer::Search(): " << error << std::endl;
+	}
+	catch(...)
+	{
+		std::cerr << "MusicPlayer::Search: Unknown Exception occured" << std::endl;
 	}
 }

@@ -37,9 +37,13 @@ void Album::Accept(Visitor* visitor)
 	{
 		std::cerr << "Error in Album::Accept: " << error << std::endl;
 	}
+	catch(...)
+	{
+		std::cerr << "Album::Accept: Unknown Exception occured" << std::endl;
+	}
 }
 
-void Album::Play(Visitor* visitor)
+void Album::ForwardVisitor(Visitor* visitor)
 {
 	try
 	{
@@ -55,27 +59,11 @@ void Album::Play(Visitor* visitor)
 	}
 	catch (std::string const& error)
 	{
-		std::cerr << "Error in Album::Play: " << error << std::endl;
+		std::cerr << "Error in Album::ForwardVisitor: " << error << std::endl;
 	}
-}
-
-void Album::GetTime(Visitor* visitor)
-{
-	try
+	catch(...)
 	{
-		if(visitor == 0)
-		{
-			std::string error = "no valid visitor";
-			throw (error); 
-		}
-		std::for_each(mSongs.begin(),mSongs.end(),[=](MusicComponent* s)
-		{
-			s->Accept(visitor);
-		});
-	}
-	catch (std::string const& error)
-	{
-		std::cerr << "Error in Album::GetTime: " << error << std::endl;
+		std::cerr << "Album::ForwardVisitor: Unknown Exception occured" << std::endl;
 	}
 }
 
@@ -98,6 +86,10 @@ void Album::AddMusic(MusicComponent* m)
 	catch (std::string const& error)
 	{
 		std::cerr << "Error in Album::AddMusic: " << error << std::endl;
+	}
+	catch(...)
+	{
+		std::cerr << "Album::Accept: Unknown Exception occured" << std::endl;
 	}
 }
 

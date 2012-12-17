@@ -12,9 +12,6 @@
 #include "Object.h"
 #include "MusicComponent.h"
 
-typedef std::list<MusicComponent*>		 TMusicComponents;
-typedef TMusicComponents::iterator TMusicComponentsItor;
-
 class MusicPlayer :
 	public Object
 {

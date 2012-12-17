@@ -22,10 +22,9 @@ public:
 	virtual ~Album();
 
 	virtual void Accept(Visitor* visitor);	
-	virtual void Play(Visitor* visitor);
+	void ForwardVisitor(Visitor* visitor);
 
 	virtual TMusicKind GetType();
-	void GetTime(Visitor* visitor);
 	std::string GetInterpret();
 	size_t GetNumberOfEntries();
 
@@ -33,7 +32,7 @@ public:
 
 private:
 	std::string mInterpret;
-	MusicList mSongs;
+	TMusicComponents mSongs;
 };
 
 #endif

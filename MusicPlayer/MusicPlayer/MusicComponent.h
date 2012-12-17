@@ -26,7 +26,7 @@ public:
 
 	virtual TMusicKind GetType() = 0;
 	std::string GetName();
-	virtual size_t GetNumberOfEntries();
+	virtual size_t GetNumberOfEntries() = 0;
 
 	virtual void AddMusic(MusicComponent* m) = 0;
 protected:
@@ -34,6 +34,7 @@ protected:
 	TMusicKind mType;
 };
 
-typedef std::list<MusicComponent*> MusicList;
+typedef std::list<MusicComponent*> TMusicComponents;
+typedef TMusicComponents::iterator TMusicComponentsItor;
 
 #endif
