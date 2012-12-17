@@ -23,10 +23,10 @@ public:
 	virtual ~MusicComponent();
 
 	virtual void Accept(Visitor* visitor) = 0;	
-	virtual void Play() = 0;
 
 	virtual TMusicKind GetType() = 0;
 	std::string GetName();
+	virtual size_t GetNumberOfEntries();
 
 	virtual void AddMusic(MusicComponent* m) = 0;
 protected:

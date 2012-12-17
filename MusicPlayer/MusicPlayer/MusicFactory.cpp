@@ -13,7 +13,7 @@
 
 MusicFactory::~MusicFactory()
 {
-	std::for_each(mMusicComponents.begin(),mMusicComponents.end(),[=](MusicComponent* m)
+	std::for_each(mMusicComponents.begin(),mMusicComponents.end(),[&](MusicComponent* m)
 	{
 		delete m;
 	});

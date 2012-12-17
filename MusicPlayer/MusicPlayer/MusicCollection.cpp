@@ -30,7 +30,6 @@ void MusicCollection::Accept(Visitor* visitor)
 			std::string error = "no valid pointer";
 			throw (error); 
 		}
-		tmpVisitor = visitor;
 		visitor->Visit(this);
 	}
 	catch (std::string const& error)
@@ -39,31 +38,43 @@ void MusicCollection::Accept(Visitor* visitor)
 	}
 }
 
-void MusicCollection::Play()
-{
-
-}
-
-void MusicCollection::GetTime()
+void MusicCollection::Play(Visitor* visitor)
 {
 	try
 	{
-		if(tmpVisitor == 0)
+		if(visitor == 0)
 		{
 			std::string error = "no valid visitor";
 			throw (error); 
 		}
 		std::for_each(mMusicComponents.begin(),mMusicComponents.end(),[=](MusicComponent* m)
 		{
-			m->Accept(tmpVisitor);
+			m->Accept(visitor);
 		});
-
-		//make sure GetTime will not be called outside of a Visitor
-		tmpVisitor = 0;
 	}
 	catch (std::string const& error)
 	{
-		std::cerr << "Error in Album::GetTime: " << error << std::endl;
+		std::cerr << "Error in MusicCollection::Play: " << error << std::endl;
+	}
+}
+
+void MusicCollection::GetTime(Visitor* visitor)
+{
+	try
+	{
+		if(visitor == 0)
+		{
+			std::string error = "no valid visitor";
+			throw (error); 
+		}
+		std::for_each(mMusicComponents.begin(),mMusicComponents.end(),[=](MusicComponent* m)
+		{
+			m->Accept(visitor);
+		});
+	}
+	catch (std::string const& error)
+	{
+		std::cerr << "Error in MusicCollection::GetTime: " << error << std::endl;
 	}
 }
 
@@ -87,4 +98,14 @@ void MusicCollection::AddMusic(MusicComponent* m)
 	{
 		std::cerr << "Error in MusicCollection::AddMusic: " << error << std::endl;
 	}
+}
+
+size_t MusicCollection::GetNumberOfEntries()
+{
+	size_t counter = 0;
+	std::for_each(mMusicComponents.begin(),mMusicComponents.end(),[=, &counter](MusicComponent* m)
+	{
+		counter += m->GetNumberOfEntries();
+	});
+	return counter;
 }

@@ -31,7 +31,6 @@ void Album::Accept(Visitor* visitor)
 			std::string error = "no valid pointer";
 			throw (error); 
 		}
-		tmpVisitor = visitor;
 		visitor->Visit(this);
 	}
 	catch (std::string const& error)
@@ -40,25 +39,39 @@ void Album::Accept(Visitor* visitor)
 	}
 }
 
-void Album::Play()
-{}
-
-void Album::GetTime()
+void Album::Play(Visitor* visitor)
 {
 	try
 	{
-		if(tmpVisitor == 0)
+		if(visitor == 0)
 		{
 			std::string error = "no valid visitor";
 			throw (error); 
 		}
 		std::for_each(mSongs.begin(),mSongs.end(),[=](MusicComponent* s)
 		{
-			s->Accept(tmpVisitor);
+			s->Accept(visitor);
 		});
+	}
+	catch (std::string const& error)
+	{
+		std::cerr << "Error in Album::Play: " << error << std::endl;
+	}
+}
 
-		//make sure GetTime will not be called outside of a Visitor
-		tmpVisitor = 0;
+void Album::GetTime(Visitor* visitor)
+{
+	try
+	{
+		if(visitor == 0)
+		{
+			std::string error = "no valid visitor";
+			throw (error); 
+		}
+		std::for_each(mSongs.begin(),mSongs.end(),[=](MusicComponent* s)
+		{
+			s->Accept(visitor);
+		});
 	}
 	catch (std::string const& error)
 	{
@@ -96,4 +109,14 @@ std::string Album::GetInterpret()
 TMusicKind Album::GetType()
 {
 	return mType;
+}
+
+size_t Album::GetNumberOfEntries()
+{
+	size_t counter = 0;
+	std::for_each(mSongs.begin(),mSongs.end(),[=, &counter](MusicComponent* m)
+	{
+		counter += m->GetNumberOfEntries();
+	});
+	return counter;
 }

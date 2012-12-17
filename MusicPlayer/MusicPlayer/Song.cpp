@@ -38,11 +38,6 @@ void Song::Accept(Visitor* visitor)
 	}
 }
 
-void Song::Play()
-{
-
-}
-
 size_t Song::GetTime()
 {
 	return mTime;
@@ -62,4 +57,9 @@ void Song::AddMusic(MusicComponent* m)
 TMusicKind Song::GetType()
 {
 	return mType;
+}
+
+size_t GetNumberOfEntries()
+{
+	return 1;
 }

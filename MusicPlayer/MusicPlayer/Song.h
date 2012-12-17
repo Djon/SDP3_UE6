@@ -21,12 +21,12 @@ public:
 	virtual ~Song();
 
 	virtual void Accept(Visitor* visitor);	
-	virtual void Play();
 
 	virtual TMusicKind GetType();
 	size_t GetTime();
 	std::string GetInterpret();
 	std::string GetAlbum();
+	size_t GetNumberOfEntries();
 
 	virtual void AddMusic(MusicComponent* m);
 private:

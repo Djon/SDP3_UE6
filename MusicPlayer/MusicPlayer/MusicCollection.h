@@ -21,14 +21,14 @@ public:
 	virtual ~MusicCollection();
 
 	virtual void Accept(Visitor* visitor);	
-	virtual void Play();
+	virtual void Play(Visitor* visitor);
 
 	virtual TMusicKind GetType();
-	void GetTime();
+	void GetTime(Visitor* visitor);
+	size_t GetNumberOfEntries();
 
 	virtual void AddMusic(MusicComponent* m);
 private:
-	Visitor* tmpVisitor;
 	MusicList mMusicComponents;
 };
 #endif
