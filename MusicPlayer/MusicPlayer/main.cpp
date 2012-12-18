@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////
-// Workfile : Main.cpp
+// Workfile : main.cpp
 // Author : Reinhard Penn, Bernhard Selymes
 // Date : 17.11.2012
 // Description : Testdriver for MusicPlayer
@@ -32,7 +32,7 @@ void EmptyTestCase()
 	player->GetTotalTime();
 	cout << " ...done" << endl;
 
-	cout << "Play: ";
+	cout << "Play: " << endl;
 	player->Play();
 	cout << " ...done" << endl;
 
@@ -108,7 +108,7 @@ void NormalTestCase()
 	cout << player->GetTotalTime() << " seconds in player";
 	cout << " ...done" << endl;
 
-	cout << "Play: ";
+	cout << "Play: " << endl;
 	player->Play();
 	cout << " ...done" << endl;
 
@@ -121,7 +121,7 @@ void NormalTestCase()
 	player->Remove(Album1);
 	cout << " ...done" << endl;
 
-	cout << "Play after remove: ";
+	cout << "Play after remove: " << endl;
 	player->Play();
 	cout << " ...done" << endl;
 

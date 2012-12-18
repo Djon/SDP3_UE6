@@ -7,6 +7,7 @@
 
 #include <string>
 #include <iostream>
+#include <iomanip>
 #include "PlayVisitor.h"
 #include "TimeVisitor.h"
 
@@ -35,8 +36,9 @@ void PlayVisitor::Visit(Song* song)
 			throw (error); 
 		}
 		mCounter++;
-		std::cout << mCounter << ". " << song->GetName() << " << " << GetMinutes(song->GetTime()) << ":" 
-			<< GetSeconds(song->GetTime()) << " << " << song->GetInterpret() << std::endl;
+		std::cout << mCounter << ". " << song->GetName() << " << " << std::setfill('0') << std::setw(2) 
+				  << GetMinutes(song->GetTime()) << ":" << GetSeconds(song->GetTime()) << " << " 
+				  << song->GetInterpret() << std::endl;
 	}
 	catch (std::string const& error)
 	{
@@ -61,10 +63,11 @@ void PlayVisitor::Visit(Album* album)
 		TimeVisitor* timeVisitor = new TimeVisitor;
 
 		album->Accept(timeVisitor);
-		timeVisitor->GetTime();
 		
-		std::cout << "Album: " << album->GetName() << "(" << album->GetNumberOfEntries() << " Songs)" 
-			<< GetMinutes(timeVisitor->GetTime()) << ":" << GetSeconds(timeVisitor->GetTime()) << std::endl;
+		std::cout << "Album: " << album->GetName() << " (" << album->GetNumberOfEntries() << " Song(s)) " << " << "
+				  << std::setfill('0') << std::setw(2) << GetMinutes(timeVisitor->GetTime()) << ":"
+				  << std::setfill('0') << std::setw(2) << GetSeconds(timeVisitor->GetTime()) << std::endl;
+		
 		album->ForwardVisitor(this);
 
 		delete timeVisitor; timeVisitor = 0;
@@ -96,10 +99,11 @@ void PlayVisitor::Visit(MusicCollection* musicCollection)
 		TimeVisitor* timeVisitor = new TimeVisitor;
 
 		musicCollection->Accept(timeVisitor);
-		timeVisitor->GetTime();
 
-		std::cout << "Collection: " << musicCollection->GetName() << "(" << musicCollection->GetNumberOfEntries() 
-			<< " Songs)" << GetMinutes(timeVisitor->GetTime()) << ":" << GetSeconds(timeVisitor->GetTime()) << std::endl;
+		std::cout << "Collection: " << musicCollection->GetName() << " (" << musicCollection->GetNumberOfEntries() << " Song(s)) " 
+				  << " << " << std::setfill('0') << std::setw(2) << GetMinutes(timeVisitor->GetTime()) << ":" 
+				  << std::setfill('0') << std::setw(2) << GetSeconds(timeVisitor->GetTime()) << std::endl;
+		
 		musicCollection->ForwardVisitor(this);
 
 		delete timeVisitor; timeVisitor = 0;

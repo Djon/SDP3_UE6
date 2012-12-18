@@ -75,8 +75,8 @@ commentstyle=\color{dkgreen},       % comment style
 
 \subsection{Zeitaufwand}
 	\begin {itemize}
-		\item geschätzte Mh: 14
-		\item tatsächlich: Reinhard (7h), Bernhard  (7h)
+		\item geschätzte Mh: 15
+		\item tatsächlich: Reinhard (10h), Bernhard  (10h)
 	\end {itemize}
 
 
@@ -159,7 +159,7 @@ Abstrakte Basisklasse aller Klassen. Von ihr werden alle anderen Klassen abgelei
 
 
 \subsection {Klasse "MusicFactory"}
-Kann Musikmedien dynamisch anlegen und wieder freigeben. In einer Liste werden die Referenzen auf die Objekte gespeichert. Die Methoden legen die Objekte je nach Medientyp mit den übergebenen Parametern an und fügen sie der Liste hinzu.
+Kann Musikmedien dynamisch anlegen und wieder freigeben. In einer Liste werden die Referenzen auf die Objekte gespeichert. Die Methoden legen die Objekte je nach Medientyp mit den übergebenen Parametern an und fügen sie der Liste hinzu. Die Factory darf nur nach dem Musikplayer gelöscht werden, es kann nicht überprüft werden ob die Referenzen auf Objekte noch im Musicplayer gespeichert sind, weil keine Verbindung zwischen den beiden Klassen besteht.
 \\
 
 \subsection {Klasse "MusicComponent"}
@@ -503,6 +503,63 @@ Via eines SearchVisitors wird der Name überall gesucht. Der Name der gefundenen
 \section {Testausgaben} 
 
 \begin {verbatim}
+Testcase0: Empty testcase with NULL pointer.
+Add: error in MusicPlayer::Add(): no valid pointer
+ ...done
+GetTime: error in MusicPlayer::GetTime(): no valid pointer
+ ...done
+GetTotalTime:  ...done
+Play:
+ ...done
+Remove: error in MusicPlayer::Remove(): no valid pointer
+ ...done
+Search: error in MusicPlayer::Search(): no valid name
+ ...done
+Delete MusicPlayer:  ...done
+Delete MusicFactory:  ...done
+
+
+Testcase1: Normal testcase with valid objects.
+Create Objects:  ...done
+Put Albums together:  ...done
+Put an album into an album: Error in Album::AddMusic: 
+Tried to add a wrong object type to the song list
+ ...done
+Put Collection together:  ...done
+Put a collection into itself: Error in MusicCollection::AddMusic: 
+no valid pointer
+ ...done
+Add stuff to the player:  ...done
+GetTime: error in MusicPlayer::GetTime(): component doesnt exist in list
+0 seconds ...done
+GetTotalTime: 1359 seconds in player ...done
+Play:
+1. Staring At The Sun << 02:12 << The Offspring
+Collection: MyPlayList (3 Song(s))  << 10:51
+Album: Americana (2 Song(s))  << 06:08
+2. Staring At The Sun << 02:12 << The Offspring
+3. Have You Ever << 03:56 << The Offspring
+4. Psychosocial << 04:43 << Slipknot
+Album: Conspiracy Of One (1 Song(s))  << 03:28
+5. Living In Chaos << 03:28 << The Offspring
+Album: Americana (2 Song(s))  << 06:08
+6. Staring At The Sun << 02:12 << The Offspring
+7. Have You Ever << 03:56 << The Offspring
+ ...done
+Search: found medias: (search for "in")
+Staring At The Sun
+Staring At The Sun
+Living In Chaos
+Staring At The Sun
+ ...done
+Remove:  ...done
+Play after remove:
+1. Staring At The Sun << 02:12 << The Offspring
+Album: Conspiracy Of One (1 Song(s))  << 03:28
+2. Living In Chaos << 03:28 << The Offspring
+ ...done
+Delete MusicPlayer:  ...done
+Delete MusicFactory:  ...done
 \end {verbatim}
 
 
