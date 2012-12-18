@@ -455,7 +455,7 @@
           </operation>
           <operation
             Id="ea5deb88-f1b2-474d-85bc-98e6b49ce09b"
-            name="Play"
+            name="ForwardVisitor"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -477,58 +477,10 @@
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="56c3da15-7634-40df-8eb0-df4834748659"
+                  Id="9fc3f22d-cbc1-45c3-abf2-4a8dce556537"
                   name="Visitor*"
                   direction="In"
                   isUnique="false" />
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-          <operation
-            Id="188fe543-4eb3-4a3b-b749-6d846d138ee2"
-            name="GetTime"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false">
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="638106e4-45b3-44a3-878c-c3400ebc3611"
-                  direction="Return"
-                  isUnique="false">
-                  <type_NamedElement>
-                    <undefinedTypeMoniker
-                      Id="d2af1752-19d4-4620-afba-142f60fa5795"
-                      LastKnownName="void"
-                      LastKnownLocation="ClassDiagram.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-          <operation
-            Id="43b85416-92f2-4651-abdb-5fca441cad78"
-            name="GetName"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false">
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="8c1f57fe-0a6a-4030-8968-908fe82e6e17"
-                  direction="Return"
-                  isUnique="false">
-                  <type_NamedElement>
-                    <undefinedTypeMoniker
-                      Id="9fb33c96-1839-4b55-8f2c-b7985ebd079d"
-                      LastKnownName="string"
-                      LastKnownLocation="ClassDiagram.uml" />
-                  </type_NamedElement>
-                </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
@@ -601,6 +553,62 @@
                       LastKnownLocation="ClassDiagram.uml" />
                   </type_NamedElement>
                 </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="5a810a49-caa1-48c8-b427-1f82e8d44d2e"
+            name="AddMusic"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="7c888876-9ac7-4b5c-923b-bb1509fe3ed3"
+                  name="MusicComponent*"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0a499eb5-9376-4a1f-b4b8-bcbc6e6b19c0"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="d2af1752-19d4-4620-afba-142f60fa5795"
+                      LastKnownName="void"
+                      LastKnownLocation="ClassDiagram.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="111f86d3-5553-4784-a443-e5da296ee54e"
+            name="Album"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ffbd0a50-1f9d-4a7a-9dc3-3ee19b8eb7f6"
+                  name="string"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d291ff1c-150d-40ea-b346-1caec05c78ba"
+                  name="string"
+                  direction="In"
+                  isUnique="false" />
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
@@ -1901,7 +1909,7 @@
           </operation>
           <operation
             Id="7231f940-0eb5-4d24-828e-4475fc9ed1b7"
-            name="Play"
+            name="ForwardVisitor"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -1923,34 +1931,10 @@
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="e11f9cf0-f86a-40ef-9198-6b447afd559e"
+                  Id="79edf4ed-8440-4fff-92af-c9e1d821820c"
                   name="Visitor*"
                   direction="In"
                   isUnique="false" />
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-          <operation
-            Id="cada0e6a-17a1-487f-969b-0f589558d050"
-            name="GetTime"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false">
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="210a9ba3-164b-4012-a8d4-448f8f228b90"
-                  direction="Return"
-                  isUnique="false">
-                  <type_NamedElement>
-                    <undefinedTypeMoniker
-                      Id="d2af1752-19d4-4620-afba-142f60fa5795"
-                      LastKnownName="void"
-                      LastKnownLocation="ClassDiagram.uml" />
-                  </type_NamedElement>
-                </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
